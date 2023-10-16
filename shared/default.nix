@@ -155,10 +155,7 @@
       enable = true;
       package = pkgs.jdk17;
     };
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-    };
+    ssh.startAgent = true; # Start SSH Agent on login
   };
 
   services = {
