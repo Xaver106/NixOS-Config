@@ -20,7 +20,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: rec {
+  outputs = { self, nixpkgs, nixos-hardware, ... }@inputs: rec {
 
     nixosConfigurations = {
       "Xavers-nixDesktop" = nixpkgs.lib.nixosSystem {
