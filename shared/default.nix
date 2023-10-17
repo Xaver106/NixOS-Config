@@ -85,9 +85,12 @@
     prusa-slicer
     nextcloud-client
     firefox
-    
+    spotify
     thunderbird
-    betterbird
+    rpi-imager
+    gimp
+    mpv
+    vlc
     
     # Authentication
     yubioath-flutter
