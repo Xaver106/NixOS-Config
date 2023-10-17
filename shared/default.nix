@@ -65,6 +65,7 @@
   users.users.xaver106 = {
     isNormalUser = true;
     description = "Xaver106";
+    initialPassword = "Xaver105";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.fish;
   };
