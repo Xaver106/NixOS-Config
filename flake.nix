@@ -6,6 +6,8 @@
     # Official NixOS package sources
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.05";
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     
     # home-manager, used for managing user configuration
     home-manager = {
@@ -26,7 +28,16 @@
 
         modules = [
           ./shared
-          ./hosts/Xavers-nixDesktop/default.nix
+          ./hosts/Xavers-nixDesktop
+        ];
+      };
+      "Xavers-Laptop" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+
+        modules = [
+          ./shared
+          ./hosts/Xavers-Laptop
+          nixos-hardware.nixosModules.framework
         ];
       };
     };
