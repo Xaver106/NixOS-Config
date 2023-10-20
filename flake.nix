@@ -16,19 +16,27 @@
 
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, ... }@inputs: rec {
+  outputs = { self, nixpkgs, nixpkgs-stable, nixos-hardware, ... }@inputs: rec {
 
     nixosConfigurations = {
       "Xavers-nixDesktop" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+
+        specialArgs = {
+          nixpkgs-stable = import nixpkgs-stable {inherit system; config.allowUnfree = true;};
+        };
 
         modules = [
           ./shared
           ./hosts/Xavers-nixDesktop
         ];
       };
-      "Xavers-Laptop" = nixpkgs.lib.nixosSystem {
+      "Xavers-Laptop" = nixpkgs.lib.nixosSystem  rec {
         system = "x86_64-linux";
+
+        specialArgs = {
+          nixpkgs-stable = import nixpkgs-stable {inherit system; config.allowUnfree = true;};
+        };
 
         modules = [
           ./shared

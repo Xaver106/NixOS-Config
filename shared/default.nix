@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ lib, config, options, pkgs, modulesPath, ... }:
+{ lib, config, options, pkgs, modulesPath, nixpkgs-stable, ... }:
 
 {
   # Set your time zone.
@@ -34,6 +34,8 @@
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
+
+  services.xserver.displayManager.sddm.autoNumlock = true; # enable numLock on login
 
   # Configure keymap in X11
   services.xserver = {
@@ -67,6 +69,9 @@
     description = "Xaver106";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.fish;
+    packages = with nixpkgs-stable; [
+      
+    ];
   };
 
   # List packages installed in system profile. To search, run:
@@ -89,6 +94,7 @@
     thunderbird
     rpi-imager
     gimp
+    qalculate-qt
     mpv
     vlc
     
@@ -159,6 +165,7 @@
       package = pkgs.jdk17;
     };
     ssh.startAgent = true; # Start SSH Agent on login
+    dconf.enable = true; # orrect KDE Theme on Wayland
   };
 
   services = {
