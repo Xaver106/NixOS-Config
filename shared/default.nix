@@ -32,10 +32,19 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.displayManager = {
+    sddm = {
+      enable = true;
+      theme = "breeze";
+      autoNumlock = true; # enable numLock on login
+      settings = {
+        Theme.CursorTheme = "breeze_cursors";
+      };
+    };
+    defaultSession = "plasmawayland";
+  };
 
-  services.xserver.displayManager.sddm.autoNumlock = true; # enable numLock on login
+  services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -59,9 +68,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.xaver106 = {
@@ -172,6 +178,8 @@
     flatpak.enable = true;
     pcscd.enable = true; # Needed for yubico authenticator
   };
+
+  security.pam.services.login.fprintAuth = false; # Disable fingerprint login (Kwallet doesn't unlock with it)
 
   nix = {
     gc = {

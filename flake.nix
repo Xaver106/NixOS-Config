@@ -39,9 +39,9 @@
         };
 
         modules = [
+          nixos-hardware.nixosModules.framework
           ./shared
           ./hosts/Xavers-Laptop
-          nixos-hardware.nixosModules.framework
         ];
       };
     };
