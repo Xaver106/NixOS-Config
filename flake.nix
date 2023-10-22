@@ -19,7 +19,7 @@
   outputs = { self, nixpkgs, nixpkgs-stable, nixos-hardware, ... }@inputs: rec {
 
     nixosConfigurations = {
-      "Xavers-nixDesktop" = nixpkgs.lib.nixosSystem rec {
+      "Xavers-nixDesktop" = nixpkgs.lib.nixosSystem rec  {
         system = "x86_64-linux";
 
         specialArgs = {
