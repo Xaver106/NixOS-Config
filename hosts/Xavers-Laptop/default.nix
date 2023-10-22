@@ -19,7 +19,10 @@
   # Enable firmware updates
   services.fwupd.enable = true;
 
-  security.pam.services.kwallet.enableKwallet = true; # Unlock Kwallet on login (Fingerprint)
+  security.pam.services.kwallet = {
+    name = "kwallet";
+    enableKwallet = true;
+  }; # Unlock Kwallet on login (Fingerprint)
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
