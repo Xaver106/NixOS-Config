@@ -1,5 +1,5 @@
 {
-  description = "Ryan's NixOS Flake";
+  description = "Xavers NixOS configuration";
 
   inputs = {
 
@@ -19,7 +19,7 @@
   outputs = { self, nixpkgs, nixpkgs-stable, nixos-hardware, ... }@inputs: rec {
 
     nixosConfigurations = {
-      "Xavers-nixDesktop" = nixpkgs.lib.nixosSystem rec  {
+      "Xavers-nixDesktop" = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
 
         specialArgs = {
@@ -39,7 +39,6 @@
         };
 
         modules = [
-          nixos-hardware.nixosModules.framework
           ./shared
           ./hosts/Xavers-Laptop
         ];
