@@ -41,7 +41,6 @@
         Theme.CursorTheme = "breeze_cursors";
       };
     };
-    defaultSession = "plasmawayland";
   };
 
   services.xserver.desktopManager.plasma5.enable = true;
