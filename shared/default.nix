@@ -86,7 +86,6 @@
     # Unsorted
     ansible
     glances
-    kate
     ranger
     gparted
     neofetch
@@ -119,9 +118,10 @@
     maven
     gradle
 
-    # IDEs
+    # IDEs + Text Editors
     vscode
     jetbrains-toolbox
+    kate
 
     # Latex
     texlive.combined.scheme-full
@@ -142,6 +142,8 @@
     prismlauncher-qt5
 
     # Communication
+    signal-desktop
+    threema-desktop
     teamspeak_client
     (pkgs.discord.override {
       withOpenASAR = false;
