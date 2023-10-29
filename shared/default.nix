@@ -5,8 +5,7 @@
 { lib, config, options, pkgs, modulesPath, nixpkgs-stable, ... }:
 
 {
-  # Set your time zone.
-  time.timeZone = "Europe/Berlin";
+  time.timeZone = "Europe/Berlin"; # Set timezone to Berlin
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -22,40 +21,33 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true; # Allow unfree packages
 
-  # Enable Networking
-  networking.networkmanager.enable = true;
+  networking.networkmanager.enable = true; # Enable Networking
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  services.xserver.enable = true; # Enable the X11 windowing system.
 
-  # Enable the KDE Plasma Desktop Environment.
+  # Enable SDDM display manager
   services.xserver.displayManager = {
     sddm = {
       enable = true;
-      theme = "breeze";
+      theme = "breeze"; # set login theme
       autoNumlock = true; # enable numLock on login
       settings = {
-        Theme.CursorTheme = "breeze_cursors";
+        Theme.CursorTheme = "breeze_cursors"; # set cursor theme
       };
     };
   };
 
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true; # Enable KDE Plasma
 
   # Configure keymap in X11
   services.xserver = {
     layout = "de";
     xkbVariant = "";
   };
-
-  # Configure console keymap
-  console.keyMap = "de";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+  console.keyMap = "de"; # Configure console keymap
+  services.printing.enable = true; # Enable CUPS to print documents.
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -68,7 +60,7 @@
     pulse.enable = true;
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define my user account.
   users.users.xaver106 = {
     isNormalUser = true;
     description = "Xaver106";
@@ -79,83 +71,80 @@
     ];
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # Installed packages
   environment.systemPackages = with pkgs; [
 
     # Unsorted
-    ansible
-    glances
-    ranger
-    gparted
-    neofetch
-    filezilla
-    cryptomator
-    prusa-slicer
-    nextcloud-client
-    firefox
-    spotify
-    thunderbird
-    rpi-imager
-    gimp
-    qalculate-qt
-    mpv
-    vlc
+    ansible # a suite of software tools that enables infrastructure as code
+    glances # system monitoring tool for Console
+    ranger # Console File Manager
+    gparted # Partition Manager
+    neofetch # System Information Tool
+    filezilla # FTP Client
+    cryptomator # Encryption Tool
+    prusa-slicer # 3D Printer Slicer
+    nextcloud-client # Nextcloud Client
+    firefox # Web Browser
+    spotify # Music Streaming
+    thunderbird # E-Mail Client
+    rpi-imager # Raspberry Pi Imager
+    qalculate-qt # calculator
+    bottles # Wine Wrapper
+    mpv # Video Player
+    
+    # Image Editing
+    inkscape # Vector Graphics Editor
+    gimp # Image Editor
     
     # Authentication
-    yubioath-flutter
-    yubikey-manager
-    yubikey-manager-qt
-    yubikey-touch-detector
-    yubikey-personalization
-    yubikey-personalization-gui
+    yubioath-flutter # Yubikey Authenticator
+    yubikey-manager-qt # Yubikey Manager GUI
+    yubikey-personalization # Yubikey Personalization CLI
+    yubikey-personalization-gui # Yubikey Personalization GUI
 
-    # Development Tools
-    git
-    smartgithg
+    # Git + Tools
+    git # Git
+    smartgithg # Git GUI
 
     # Build Tools
-    maven
-    gradle
+    maven # Build Tool for Java
+    gradle # Build Tool for Java
 
     # IDEs + Text Editors
-    vscode
-    jetbrains-toolbox
-    kate
+    vscode # Visual Studio Code
+    jetbrains-toolbox # Jetbrains IDEs
+    kate # Text Editor
 
     # Latex
-    texlive.combined.scheme-full
-    jabref
+    texlive.combined.scheme-full # Latex
+    jabref # Reference Manager
 
     # Man Pages + tldr
-    man-pages
-    man-pages-posix
-    tldr
+    man-pages # man pages for Linux
+    man-pages-posix # man pages for POSIX
+    tldr # Short explanations for commands
 
     # LibreOffice + Spell Checking
-    libreoffice-qt
-    hunspell
-    hunspellDicts.de_DE
-    hunspellDicts.en_US
+    libreoffice-qt # Office Suite
+    hunspell # Spell Checking
+    hunspellDicts.de_DE # Spell Checking German
+    hunspellDicts.en_US # Spell Checking English
 
     # Minecraft
-    prismlauncher-qt5
+    prismlauncher-qt5 # Minecraft Launcher
 
     # Communication
-    signal-desktop
-    threema-desktop
-    teamspeak_client
-    (pkgs.discord.override {
-      withOpenASAR = false;
-      withVencord = true;
-    })
+    signal-desktop # Signal Messenger
+    threema-desktop # Threema Messenger
+    teamspeak_client # Teamspeak
+    (pkgs.discord.override {withVencord = true;}) # Discord + Vencord
   ];
 
 
   programs = {
-    fish.enable = true;
-    kdeconnect.enable = true;
-    _1password.enable = true;
+    fish.enable = true; # Fish Shell
+    kdeconnect.enable = true; # KDE Connect
+    _1password.enable = true; # 1Password CLI
     _1password-gui = {
       enable = true;
       # Certain features, including CLI integration and system authentication support,
@@ -169,28 +158,29 @@
     };
     java = {
       enable = true;
-      package = pkgs.jdk17;
+      package = pkgs.jdk17; # Java Version 17
     };
+
     ssh.startAgent = true; # Start SSH Agent on login
     dconf.enable = true; # orrect KDE Theme on Wayland
   };
 
   services = {
-    flatpak.enable = true;
+    flatpak.enable = true; # Enables Flatpak
     pcscd.enable = true; # Needed for yubico authenticator
   };
 
   security.pam.services.login.fprintAuth = false; # Disable fingerprint login (Kwallet doesn't unlock with it)
 
   nix = {
-    gc = {
+    gc = { # Enable Garbage Collection
       automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 30d";
+      dates = "daily"; # Fire daily
+      options = "--delete-older-than 7d"; # Delete Generations older than 7 days
     };
     settings = {
-      auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
+      auto-optimise-store = true; # Try to reduce size of nix Store
+      experimental-features = [ "nix-command" "flakes" ]; # Enable Flakes and the nix Command
     };
   };
 
