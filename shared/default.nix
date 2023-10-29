@@ -170,8 +170,6 @@
     pcscd.enable = true; # Needed for yubico authenticator
   };
 
-  security.pam.services.login.fprintAuth = false; # Disable fingerprint login (Kwallet doesn't unlock with it)
-
   nix = {
     gc = { # Enable Garbage Collection
       automatic = true;
