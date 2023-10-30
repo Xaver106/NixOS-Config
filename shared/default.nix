@@ -91,6 +91,7 @@
     qalculate-qt # calculator
     bottles # Wine Wrapper
     mpv # Video Player
+    gpg-tui # GPG TUI
     
     # Image Editing
     inkscape # Vector Graphics Editor
@@ -163,6 +164,10 @@
 
     ssh.startAgent = true; # Start SSH Agent on login
     dconf.enable = true; # orrect KDE Theme on Wayland
+    gnupg.agent = {
+      enable = true;
+      pinentryFlavor = "qt";
+    };
   };
 
   services = {
