@@ -165,6 +165,7 @@
     ssh.startAgent = true; # Start SSH Agent on login
     dconf.enable = true; # orrect KDE Theme on Wayland
     gnupg.agent = {
+      # Enable GPG and set pinentry
       enable = true;
       pinentryFlavor = "qt";
     };
