@@ -92,6 +92,7 @@
     bottles # Wine Wrapper
     mpv # Video Player
     gpg-tui # GPG TUI
+    nerdfonts # Nerd Fonts
     
     # Image Editing
     inkscape # Vector Graphics Editor
@@ -106,6 +107,7 @@
     # Git + Tools
     git # Git
     smartgithg # Git GUI
+    lazygit # Git TUI
 
     # Build Tools
     maven # Build Tool for Java
