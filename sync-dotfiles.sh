@@ -107,5 +107,8 @@ interactively_copy_if_different() {
 # User Gitconfig
 backup_and_link "dotfiles/.gitconfig" "${HOME}/.gitconfig"
 
+# Goodvibes stations
+interactively_copy_if_different "dotfiles/goodvibes/stations.xml" "${HOME}/.local/share/goodvibes/stations.xml"
+
 # Smartgit preferences and UI (Smartgit overrides instead of modifying)
 interactively_copy_if_different "dotfiles/smartgit/ui-config.yml" "${HOME}/.config/smartgit/22.1/ui-config.yml"

@@ -1,0 +1,10 @@
+<Stations>
+  <Station>
+    <uri>https://listen.hardbase.fm/tunein-aac-hd</uri>
+    <name>Hardbase.fm</name>
+  </Station>
+  <Station>
+    <uri>listen.housetime.fm/tunein-aac-hd</uri>
+    <name>Housetime.fm</name>
+  </Station>
+</Stations>
