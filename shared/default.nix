@@ -93,6 +93,8 @@
     mpv # Video Player
     gpg-tui # GPG TUI
     nerdfonts # Nerd Fonts
+    wget # Download Manager
+    goodvibes # Internet Radio Player
     
     # Image Editing
     inkscape # Vector Graphics Editor
