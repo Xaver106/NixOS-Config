@@ -93,8 +93,10 @@
     mpv # Video Player
     gpg-tui # GPG TUI
     nerdfonts # Nerd Fonts
+    neovim # Neovim
     wget # Download Manager
     goodvibes # Internet Radio Player
+    kitty # Terminal Emulator
     
     # Image Editing
     inkscape # Vector Graphics Editor

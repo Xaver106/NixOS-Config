@@ -9,10 +9,6 @@
 
     # nixos-hardware
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    
-    # home-manager
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
   };
 
