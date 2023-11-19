@@ -54,9 +54,7 @@ toolbars:
     - {id: commit}
     - {id: conflictSolver}
     - {stretching: false}
-    - {id: delete}
     - {id: discard}
-    - {id: ignore}
     textBelowIcon: true
   log.review:
     items:
