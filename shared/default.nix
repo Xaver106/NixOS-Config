@@ -70,10 +70,7 @@
     wheel: Allow user to use sudo
     adbusers: Allow user to use adb (android debug bridge) (enabled with programs.adb.enable)
     */
-    shell = pkgs.fish;
-    packages = with nixpkgs-stable; [
-      
-    ];
+    shell = pkgs.fish; # Set shell to fish
   };
 
   # Installed packages
@@ -181,12 +178,17 @@
       enable = true;
       pinentryFlavor = "qt";
     };
-    adb.enable = true; # Android Debug Bridge
+    /*
+    Android Debug Bridge 
+    wiki: https://nixos.wiki/wiki/Android
+    */
+    adb.enable = true;
   };
 
   services = {
     flatpak.enable = true; # Enables Flatpak
     pcscd.enable = true; # Needed for yubico authenticator
+    teamviewer.enable = true; # Remote Desktop
   };
 
   nix = {
