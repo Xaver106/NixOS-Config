@@ -100,6 +100,7 @@
     goodvibes # Internet Radio Player
     kitty # Terminal Emulator
     anki-bin # Flashcard App (see Wiki https://nixos.wiki/wiki/Anki)
+    josm # OpenStreetMap Editor
     
     # Image Editing
     inkscape # Vector Graphics Editor
