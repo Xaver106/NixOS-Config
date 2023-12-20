@@ -25,6 +25,12 @@
 
   networking.networkmanager.enable = true; # Enable Networking
 
+  hardware.bluetooth = {
+    enable = true; # enables support for Bluetooth
+    powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  };
+
+
   services.xserver.enable = true; # Enable the X11 windowing system.
 
   # Enable SDDM display manager
