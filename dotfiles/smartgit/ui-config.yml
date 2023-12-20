@@ -89,4 +89,9 @@ toolbars:
     - {stretching: true}
     - {id: annotate}
     - {id: investigate}
-filterConfiguration: {}
+  std:
+    wt: []
+    history: []
+    refs: []
+    stashes: []
+filterConfiguration: {regularExpressions: false}
