@@ -53,7 +53,14 @@
     xkbVariant = "";
   };
   console.keyMap = "de"; # Configure console keymap
+
+
   services.printing.enable = true; # Enable CUPS to print documents.
+  services.avahi = { # Auto detect Network printers
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
   # Enable sound with pipewire.
   sound.enable = true;
