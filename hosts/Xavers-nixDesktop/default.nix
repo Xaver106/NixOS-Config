@@ -19,6 +19,8 @@
 
   time.hardwareClockInLocalTime = true; # Fix windows showing wrong time
 
+  services.boinc.enable = true; # BOINC Client and Manager (Distributet computing service)
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
