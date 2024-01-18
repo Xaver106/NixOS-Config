@@ -5,6 +5,12 @@
 { lib, config, options, pkgs, modulesPath, nixpkgs-stable, ... }:
 
 {
+
+  imports =
+    [
+      ../modules/dnscrypt.nix # DNSCrypt Module
+    ];
+
   time.timeZone = "Europe/Berlin"; # Set timezone to Berlin
 
   # Select internationalisation properties.
@@ -24,6 +30,11 @@
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
 
   networking.networkmanager.enable = true; # Enable Networking
+
+  dnscrypt-module = {
+    enable = true;
+    serverNames = [ "cloudflare-family" "cloudflare-family-ipv6" ];
+  };
 
   hardware.bluetooth = {
     enable = true; # enables support for Bluetooth
