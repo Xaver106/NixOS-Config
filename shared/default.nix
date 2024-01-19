@@ -126,6 +126,7 @@
     kitty # Terminal Emulator
     anki-bin # Flashcard App (see Wiki https://nixos.wiki/wiki/Anki)
     josm # OpenStreetMap Editor
+    libsForQt5.filelight # Disk Usage Analyzer
     
     # Image Editing
     inkscape # Vector Graphics Editor
