@@ -34,13 +34,16 @@
   dnscrypt-module = {
     enable = true;
     serverNames = [ "cloudflare-family" "cloudflare-family-ipv6" ];
+    forwardingRules = [
+      { domain = "local"; servers = [ "192.168.10.1" ]; }
+      { domain = "fritz.box"; servers = [ "192.168.10.1" ]; }
+    ];
   };
 
   hardware.bluetooth = {
     enable = true; # enables support for Bluetooth
     powerOnBoot = true; # powers up the default Bluetooth controller on boot
   };
-
 
   services.xserver.enable = true; # Enable the X11 windowing system.
 
