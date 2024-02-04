@@ -131,6 +131,7 @@
     josm # OpenStreetMap Editor
     libsForQt5.filelight # Disk Usage Analyzer
     tor-browser # Tor Browser
+    dig # DNS Lookup
     
     # Image Editing
     inkscape # Vector Graphics Editor
@@ -201,6 +202,8 @@
       enable = true;
       package = pkgs.jdk17; # Java Version 17
     };
+
+    steam.enable = true;
 
     ssh.startAgent = true; # Start SSH Agent on login
     dconf.enable = true; # orrect KDE Theme on Wayland
