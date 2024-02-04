@@ -33,7 +33,7 @@
 
   dnscrypt-module = {
     enable = true;
-    serverNames = [ "cloudflare-family" "cloudflare-family-ipv6" ];
+    serverNames = [ "cloudflare-security" "cloudflare-security-ipv6" ];
     forwardingRules = [
       { domain = "local"; servers = [ "192.168.10.1" ]; }
       { domain = "fritz.box"; servers = [ "192.168.10.1" ]; }
@@ -62,9 +62,9 @@
   services.xserver.desktopManager.plasma5.enable = true; # Enable KDE Plasma
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "de";
-    xkbVariant = "";
+    variant = "";
   };
   console.keyMap = "de"; # Configure console keymap
 

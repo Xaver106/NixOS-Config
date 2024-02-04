@@ -30,7 +30,7 @@ in
     serverNames = mkOption {
       type = types.listOf types.str;
       default = [ "cloudflare" "cloudflare-ipv6" ];
-      description = "List of dnscrypt-proxy server names to use.";
+      description = "List of dnscrypt-proxy server names to use. See https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md for all available.";
     };
 
     forwardingRules = mkOption {
