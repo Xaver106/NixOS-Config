@@ -132,6 +132,7 @@
     libsForQt5.filelight # Disk Usage Analyzer
     tor-browser # Tor Browser
     dig # DNS Lookup
+    ntfs3g # NTFS Support
     
     # Image Editing
     inkscape # Vector Graphics Editor
