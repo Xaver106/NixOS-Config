@@ -1,3 +1,5 @@
+# Inspired by https://nixos-and-flakes.thiscute.world/ from https://github.com/ryan4yin
+
 {
   description = "Xavers NixOS configuration";
 
