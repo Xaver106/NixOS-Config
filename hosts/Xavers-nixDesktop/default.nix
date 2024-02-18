@@ -21,6 +21,12 @@
 
   services.boinc.enable = true; # BOINC Client and Manager (Distributet computing service)
 
+  # Streamdeck UI to control Elgato Stream Deck
+  programs.streamdeck-ui = {
+    enable = true;
+    autoStart = true; # optional
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

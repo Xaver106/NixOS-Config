@@ -218,6 +218,8 @@
     wiki: https://nixos.wiki/wiki/Android
     */
     adb.enable = true;
+    # Noise Supression
+    noisetorch.enable = true;
   };
 
   services = {
