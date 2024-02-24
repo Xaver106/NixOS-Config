@@ -133,7 +133,9 @@
     tor-browser # Tor Browser
     dig # DNS Lookup
     ntfs3g # NTFS Support
-    
+    freecad # CAD Software
+    zettlr # Note Taking App
+
     # Image Editing
     inkscape # Vector Graphics Editor
     gimp # Image Editor
