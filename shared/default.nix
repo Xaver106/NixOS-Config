@@ -238,6 +238,18 @@
       auto-optimise-store = true; # Try to reduce size of nix Store
       experimental-features = [ "nix-command" "flakes" ]; # Enable Flakes and the nix Command
     };
+    #Add the system flake locatet at /etc/nixos to the registry as "system"
+    registry."system" = {
+      from = {
+        id = "system";
+        type = "indirect";
+      }; 
+      to = {
+        path = "/etc/nixos/";
+        type = "path";
+      };
+    };
+
   };
 
 
