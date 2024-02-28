@@ -107,6 +107,13 @@
     shell = pkgs.fish; # Set shell to fish
   };
 
+  fonts = {
+    enableDefaultPackages = true; # Install some general default fonts
+    packages = with pkgs; [
+      nerdfonts # All Nerdfonts 
+    ];
+  };
+
   # Installed packages
   environment.systemPackages = with pkgs; [
 
@@ -123,7 +130,6 @@
     qalculate-qt # calculator
     bottles # Wine Wrapper
     mpv # Video Player
-    nerdfonts # Nerd Fonts
     neovim # Neovim
     wget # Download Manager
     goodvibes # Internet Radio Player
