@@ -105,11 +105,7 @@
   environment.systemPackages = with pkgs; [
 
     # Unsorted
-    ansible # a suite of software tools that enables infrastructure as code
-    glances # system monitoring tool for Console
-    ranger # Console File Manager
     gparted # Partition Manager
-    neofetch # System Information Tool
     filezilla # FTP Client
     cryptomator # Encryption Tool
     prusa-slicer # 3D Printer Slicer
@@ -121,7 +117,6 @@
     qalculate-qt # calculator
     bottles # Wine Wrapper
     mpv # Video Player
-    gpg-tui # GPG TUI
     nerdfonts # Nerd Fonts
     neovim # Neovim
     wget # Download Manager
@@ -131,10 +126,18 @@
     josm # OpenStreetMap Editor
     libsForQt5.filelight # Disk Usage Analyzer
     tor-browser # Tor Browser
-    dig # DNS Lookup
     ntfs3g # NTFS Support
     freecad # CAD Software
     zettlr # Note Taking App
+
+    # Git + Tools
+    git # Git
+    smartgithg # Git GUI
+    lazygit # Git TUI
+
+    # Build Tools
+    maven # Build Tool for Java
+    gradle # Build Tool for Java
 
     # Image Editing
     inkscape # Vector Graphics Editor
@@ -146,15 +149,6 @@
     yubikey-personalization # Yubikey Personalization CLI
     yubikey-personalization-gui # Yubikey Personalization GUI
 
-    # Git + Tools
-    git # Git
-    smartgithg # Git GUI
-    lazygit # Git TUI
-
-    # Build Tools
-    maven # Build Tool for Java
-    gradle # Build Tool for Java
-
     # IDEs + Text Editors
     vscode # Visual Studio Code
     jetbrains-toolbox # Jetbrains IDEs
@@ -163,11 +157,6 @@
     # Latex
     texlive.combined.scheme-full # Latex
     jabref # Reference Manager
-
-    # Man Pages + tldr
-    man-pages # man pages for Linux
-    man-pages-posix # man pages for POSIX
-    tldr # Short explanations for commands
 
     # LibreOffice + Spell Checking
     libreoffice-qt # Office Suite
@@ -183,6 +172,24 @@
     threema-desktop # Threema Messenger
     teamspeak_client # Teamspeak
     (pkgs.discord.override {withVencord = true;}) # Discord + Vencord
+
+    # Command Line Tools and TUIs
+    chezmoi # Dotfile Manager 
+    dust # Disk Usage Statistics
+    btop # Resource Monitor
+    bat # Cat Clone
+    eza # File listing
+    thefuck # Correct Command mistakes
+    mc # File manager TUI
+    dig # DNS Lookup
+    gpg-tui # GPG TUI
+    neofetch # System Information Tool
+    ranger # Console File Manager
+
+    # Man Pages + tldr
+    man-pages # man pages for Linux
+    man-pages-posix # man pages for POSIX
+    tldr # Short explanations for commands
   ];
 
 
