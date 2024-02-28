@@ -11,9 +11,8 @@
       ../modules/dnscrypt.nix # DNSCrypt Module
     ];
 
-  time.timeZone = "Europe/Berlin"; # Set timezone to Berlin
-
   # Select internationalisation properties.
+  time.timeZone = "Europe/Berlin"; # Set timezone to Berlin
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "de_DE.UTF-8";
@@ -29,8 +28,9 @@
 
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
 
-  networking.networkmanager.enable = true; # Enable Networking
-
+  # Enable Networking and configure
+  networking.networkmanager.enable = true; 
+  # Enable and configure my own DNSCrypt Module
   dnscrypt-module = {
     enable = true;
     serverNames = [ "cloudflare-security" "cloudflare-security-ipv6" ];
@@ -40,6 +40,7 @@
     ];
   };
 
+  # Enable Bluetoth, obviously...
   hardware.bluetooth = {
     enable = true; # enables support for Bluetooth
     powerOnBoot = true; # powers up the default Bluetooth controller on boot
@@ -47,7 +48,7 @@
 
   services.xserver.enable = true; # Enable the X11 windowing system.
 
-  # Enable SDDM display manager
+  # Enable and configure SDDM display manager
   services.xserver.displayManager = {
     sddm = {
       enable = true;
@@ -68,7 +69,7 @@
   };
   console.keyMap = "de"; # Configure console keymap
 
-
+  # Enable printing services
   services.printing.enable = true; # Enable CUPS to print documents.
   services.avahi = { # Auto detect Network printers
     enable = true;
