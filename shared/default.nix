@@ -88,6 +88,11 @@
     pulse.enable = true;
   };
 
+  environment.interactiveShellInit = ''
+    alias ls='eza --icons --group-directories-first -la'
+  '';
+
+
   # Define my user account.
   users.users.xaver106 = {
     isNormalUser = true;
