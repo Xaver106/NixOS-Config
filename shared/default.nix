@@ -88,9 +88,9 @@
     pulse.enable = true;
   };
 
-  environment.interactiveShellInit = ''
-    alias ls='eza --icons --group-directories-first -la'
-  '';
+  environment.shellAliases = { 
+    ls = "eza --icons --group-directories-first -la";
+  };
 
 
   # Define my user account.
@@ -141,6 +141,7 @@
     ntfs3g # NTFS Support
     freecad # CAD Software
     zettlr # Note Taking App
+    logseq # Note Taking App
 
     # Git + Tools
     git # Git
