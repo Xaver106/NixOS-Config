@@ -16,8 +16,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  services.xserver.displayManager.defaultSession = "plasmawayland";
-
   # Enable firmware updates
   services.fwupd.enable = true;
 

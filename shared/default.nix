@@ -60,7 +60,8 @@
     };
   };
 
-  services.xserver.desktopManager.plasma5.enable = true; # Enable KDE Plasma
+  services.xserver.desktopManager.plasma5.enable = false; # Enable KDE Plasma 5
+  services.xserver.desktopManager.plasma6.enable = true; # Enable KDE Plasma 6
 
   # Configure keymap in X11
   services.xserver.xkb = {
