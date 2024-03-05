@@ -19,6 +19,8 @@
 
   time.hardwareClockInLocalTime = true; # Fix windows showing wrong time
 
+  services.xserver.displayManager.defaultSession = "plasmax11";
+
   services.boinc.enable = true; # BOINC Client and Manager (Distributet computing service)
 
   # Streamdeck UI to control Elgato Stream Deck
