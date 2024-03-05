@@ -107,6 +107,7 @@
     */
     shell = pkgs.fish; # Set shell to fish
   };
+  users.defaultUserShell = pkgs.fish; # Set default shell to fish
 
   fonts = {
     enableDefaultPackages = true; # Install some general default fonts
@@ -131,7 +132,6 @@
     qalculate-qt # calculator
     bottles # Wine Wrapper
     mpv # Video Player
-    neovim # Neovim
     wget # Download Manager
     goodvibes # Internet Radio Player
     kitty # Terminal Emulator
@@ -143,6 +143,7 @@
     freecad # CAD Software
     zettlr # Note Taking App
     logseq # Note Taking App
+    unzip
 
     # Git + Tools
     git # Git
@@ -186,6 +187,15 @@
     threema-desktop # Threema Messenger
     teamspeak_client # Teamspeak
     (pkgs.discord.override {withVencord = true;}) # Discord + Vencord
+    vesktop
+
+    # Coding Languages + Compilers
+    # Java Installed trough programs.java
+    python3 # Python
+    gcc # C Compiler
+    go # Go
+    lua # Lua
+    lua-language-server
 
     # Command Line Tools and TUIs
     chezmoi # Dotfile Manager 
@@ -199,6 +209,13 @@
     gpg-tui # GPG TUI
     neofetch # System Information Tool
     ranger # Console File Manager
+    fzf # Search tool
+    tmux # Terminal Multiplexer
+
+    # Neovim + Lazy.vim Requirements
+    neovim
+    fd
+    ripgrep
 
     # Man Pages + tldr
     man-pages # man pages for Linux
