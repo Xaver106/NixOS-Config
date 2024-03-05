@@ -153,10 +153,12 @@
     unzip
     keymapp
     ungoogled-chromium
+    desktop-file-utils # Desktop File Utilities
 
     # Git + Tools
-    git # Git
+    gitFull # Git
     smartgithg # Git GUI
+    gittyup
     lazygit # Git TUI
 
     # Build Tools
