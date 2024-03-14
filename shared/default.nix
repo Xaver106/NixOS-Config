@@ -61,7 +61,7 @@
   };
 
   services.xserver.desktopManager.plasma5.enable = false; # Enable KDE Plasma 5
-  services.xserver.desktopManager.plasma6.enable = true; # Enable KDE Plasma 6
+  services.desktopManager.plasma6.enable = true; # Enable KDE Plasma 6
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -89,8 +89,15 @@
     pulse.enable = true;
   };
 
-  environment.shellAliases = { 
-    ls = "eza --icons --group-directories-first -la";
+  environment = {
+    # Set the default text editor
+    variables = {
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+    };
+    shellAliases = { 
+      ls = "eza --icons --group-directories-first -la";
+    };
   };
 
 
@@ -251,7 +258,6 @@
     gnupg.agent = {
       # Enable GPG and set pinentry
       enable = true;
-      pinentryFlavor = "qt";
     };
     /*
     Android Debug Bridge 
