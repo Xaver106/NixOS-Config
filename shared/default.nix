@@ -37,6 +37,8 @@
     forwardingRules = [
       { domain = "local"; servers = [ "192.168.10.1" ]; }
       { domain = "fritz.box"; servers = [ "192.168.10.1" ]; }
+      { domain = "login.wifionice.de"; servers = [ "172.18.0.1" ]; }
+      { domain = "iceportal.de"; servers = [ "172.18.0.1" ]; }
     ];
   };
 
@@ -222,6 +224,7 @@
     ranger # Console File Manager
     fzf # Search tool
     tmux # Terminal Multiplexer
+    speedtest-cli
 
     # Neovim + Lazy.vim Requirements
     neovim
