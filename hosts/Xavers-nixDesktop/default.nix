@@ -19,7 +19,7 @@
 
   time.hardwareClockInLocalTime = true; # Fix windows showing wrong time
 
-  services.xserver.displayManager.defaultSession = "plasmax11";
+  services.displayManager.defaultSession = "plasmax11";
 
   environment.systemPackages = with pkgs; [
     deckmaster # Elgato Stream Deck software
