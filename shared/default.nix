@@ -51,7 +51,7 @@
   services.xserver.enable = true; # Enable the X11 windowing system.
 
   # Enable and configure SDDM display manager
-  services.xserver.displayManager = {
+  services.displayManager = {
     sddm = {
       enable = true;
       theme = "breeze"; # set login theme
@@ -277,7 +277,7 @@
 
   services = {
     flatpak.enable = true; # Enables Flatpak
-    pcscd.enable = true; # Needed for yubico authenticator
+    pcscd.enable = true; # Needed for yubico authenticator (Smart Card Reader)
     teamviewer.enable = true; # Remote Desktop
   };
   
