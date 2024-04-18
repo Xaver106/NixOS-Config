@@ -27,6 +27,8 @@
         modules = [
           ./shared
           ./hosts/Xavers-nixDesktop
+          nixos-hardware.nixosModules.common-cpu-intel
+          nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
         ];
       };
       "Xavers-Laptop" = nixpkgs.lib.nixosSystem  rec {
