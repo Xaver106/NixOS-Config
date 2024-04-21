@@ -158,6 +158,12 @@
     desktop-file-utils # Desktop File Utilities
     localsend # Air-Drop alternative
 
+    /*
+    Matrix Clients
+    https://nixos.wiki/wiki/Matrix
+    */
+    element-desktop
+
     # Git + Tools
     gitFull # Git
     smartgithg # Git GUI
