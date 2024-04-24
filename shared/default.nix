@@ -161,6 +161,7 @@
     ungoogled-chromium
     desktop-file-utils # Desktop File Utilities
     localsend # Air-Drop alternative
+    telegram-desktop # Telegram Messenger
 
     /*
     Matrix Clients
