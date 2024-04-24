@@ -140,6 +140,10 @@
     rpi-imager # Raspberry Pi Imager
     qalculate-qt # calculator
     bottles # Wine Wrapper
+    wineWowPackages.full 
+    winetricks
+    samba4Full
+    tdb
     mpv # Video Player
     wget # Download Manager
     goodvibes # Internet Radio Player
@@ -263,7 +267,6 @@
     };
     java = {
       enable = true;
-      package = pkgs.jdk17; # Java Version 17
     };
 
     steam.enable = true;
