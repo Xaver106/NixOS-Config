@@ -231,6 +231,7 @@
     ranger # Console File Manager
     fzf # Search tool
     tmux # Terminal Multiplexer
+    zellij # Terminal Multiplexer
     speedtest-cli
 
     # Neovim + Lazy.vim Requirements
