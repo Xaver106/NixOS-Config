@@ -114,7 +114,6 @@
     adbusers: Allow user to use adb (android debug bridge) (enabled with programs.adb.enable)
     boinc: Allow user to use boinc/connect to client (enabled with services.boinc.enable)
     */
-    shell = pkgs.fish; # Set shell to fish
   };
   users.defaultUserShell = pkgs.fish; # Set default shell to fish
 
