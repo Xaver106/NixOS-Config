@@ -220,7 +220,14 @@
     gcc # C Compiler
     go # Go
     lua # Lua
-    lua-language-server
+
+    # Language Servers
+    lua-language-server # Lua Language Server
+    texlab # Latex Language Server
+    nil # Nix Language Server
+    python311Packages.python-lsp-server # Python Language Server
+    jdt-language-server # Java Language Server
+    gopls # Go Language Server
 
     # Command Line Tools and TUIs
     chezmoi # Dotfile Manager 
@@ -238,6 +245,7 @@
     tmux # Terminal Multiplexer
     zellij # Terminal Multiplexer
     speedtest-cli
+    helix # Text Editor
 
     # Neovim + Lazy.vim Requirements
     neovim
