@@ -6,6 +6,22 @@
 
   programs.fish.enable = true;
 
+  programs.helix = {
+    enable = true;
+    settings = {
+      theme = "catppuccin_mocha";
+      editor = {
+        color-modes = true;
+        cursor-shape = {
+          insert = "bar";
+          normal = "block";
+          select = "underline";
+        };
+        indent-guides.render = true;
+      };
+    };
+  };
+
   programs.zoxide.enable = true;
 
   programs.git = {
