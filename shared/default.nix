@@ -161,6 +161,8 @@
     desktop-file-utils # Desktop File Utilities
     localsend # Air-Drop alternative
     telegram-desktop # Telegram Messenger
+    sssnake
+    steam-tui
 
     /*
     Matrix Clients
@@ -195,6 +197,7 @@
 
     # Latex
     texlive.combined.scheme-full # Latex
+    tectonic # Modern Latex Compiler
     jabref # Reference Manager
 
     # LibreOffice + Spell Checking
@@ -204,7 +207,7 @@
     hunspellDicts.en_US # Spell Checking English
 
     # Minecraft
-    prismlauncher-qt5 # Minecraft Launcher
+    prismlauncher # Minecraft Launcher
 
     # Communication
     signal-desktop # Signal Messenger
