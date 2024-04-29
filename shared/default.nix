@@ -94,11 +94,8 @@
   environment = {
     # Set the default text editor
     variables = {
-      EDITOR = "nvim";
-      VISUAL = "nvim";
-    };
-    shellAliases = { 
-      ls = "eza --icons --group-directories-first -la";
+      EDITOR = "hx";
+      VISUAL = "hx";
     };
   };
 
