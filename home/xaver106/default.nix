@@ -4,7 +4,22 @@
   home.username = "xaver106";
   home.homeDirectory = "/home/xaver106";
 
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    shellInit = ''
+      fish_config theme choose "Catppuccin Mocha"
+    '';
+  };
+
+  xdg.configFile."fish/themes/Catppuccin Mocha.theme".source = let
+    catppuccin-fish = pkgs.fetchFromGitHub {
+      owner = "catppuccin";
+      repo = "fish";
+      rev = "0ce27b518e8ead555dec34dd8be3df5bd75cff8e";
+      hash = "sha256-Dc/zdxfzAUM5NX8PxzfljRbYvO9f9syuLO8yBr+R3qg=";
+    };
+  in
+    "${catppuccin-fish}/themes/Catppuccin Mocha.theme";
 
   programs.helix = {
     enable = true;
