@@ -219,6 +219,10 @@
     gcc # C Compiler
     go # Go
     lua # Lua
+    clang-tools # C/C++ Tools
+    swiProlog # Prolog
+    cargo # Rust Compiler
+    rustup # Rust Toolchain installer
 
     # Language Servers
     lua-language-server # Lua Language Server
@@ -227,6 +231,17 @@
     python311Packages.python-lsp-server # Python Language Server
     jdt-language-server # Java Language Server
     gopls # Go Language Server
+    nodePackages_latest.vscode-json-languageserver # JSON + JSONC Language Server
+    marksman # Markdown Language Server
+    rust-analyzer # Rust Language Server
+    haskell-language-server # Haskell Language Server
+
+    # Formatters
+    bibtex-tidy # Latex Formatter
+
+    # Debuggers
+    lldb # VSCode Debugger API
+    delve # Go Debugger
 
     # Command Line Tools and TUIs
     chezmoi # Dotfile Manager 
