@@ -253,13 +253,13 @@
     mc # File manager TUI
     dig # DNS Lookup
     gpg-tui # GPG TUI
-    neofetch # System Information Tool
     ranger # Console File Manager
     fzf # Search tool
     tmux # Terminal Multiplexer
     zellij # Terminal Multiplexer
     speedtest-cli
     helix # Text Editor
+    fastfetch # Fast neofetch implementation
 
     # Neovim + Lazy.vim Requirements
     neovim
