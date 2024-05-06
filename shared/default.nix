@@ -135,10 +135,10 @@
     thunderbird # E-Mail Client
     rpi-imager # Raspberry Pi Imager
     qalculate-qt # calculator
-    bottles # Wine Wrapper
-    wineWowPackages.full 
-    winetricks
-    samba4Full
+    # bottles # Wine Wrapper
+    # wineWowPackages.full 
+    # winetricks
+    # samba4Full
     tdb
     mpv # Video Player
     wget # Download Manager
@@ -160,6 +160,7 @@
     telegram-desktop # Telegram Messenger
     sssnake
     steam-tui
+    nix-tree
 
     /*
     Matrix Clients
@@ -169,7 +170,7 @@
 
     # Git + Tools
     gitFull # Git
-    smartgithg # Git GUI
+    # smartgithg # Git GUI
     gittyup
     lazygit # Git TUI
 
