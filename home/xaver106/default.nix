@@ -4,6 +4,16 @@
   home.username = "xaver106";
   home.homeDirectory = "/home/xaver106";
 
+
+  programs.kitty = {
+    enable = true;
+    theme = "Catppuccin-Mocha";
+    font.name = "IosevkaTerm Nerd Font";
+    settings = {
+      confirm_os_window_close = 0;
+    };
+  };
+  
   programs.fish = {
     enable = true;
     shellInit = ''
@@ -108,6 +118,17 @@
       default_linemode devicons
     '';
   };
+
+  
+  xdg.configFile."btop/themes/catppuccin_mocha.theme".source = let
+    catppuccin-btop = pkgs.fetchFromGitHub {
+      owner = "catppuccin";
+      repo = "btop";
+      rev = "c6469190f2ecf25f017d6120bf4e050e6b1d17af";
+      hash = "sha256-jodJl4f2T9ViNqsY9fk8IV62CrpC5hy7WK3aRpu70Cs=";
+    };
+  in
+    "${catppuccin-btop}/themes/catppuccin_mocha.theme";
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
