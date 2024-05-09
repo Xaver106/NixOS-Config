@@ -293,7 +293,12 @@
       enable = true;
     };
 
-    steam.enable = true;
+    steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+    };
+
+    gamescope.enable = true;
 
     ssh.startAgent = true; # Start SSH Agent on login
     dconf.enable = true; # orrect KDE Theme on Wayland
