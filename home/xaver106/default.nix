@@ -5,6 +5,8 @@
   home.homeDirectory = "/home/xaver106";
 
 
+  # === Kitty ===
+  
   programs.kitty = {
     enable = true;
     theme = "Catppuccin-Mocha";
@@ -13,6 +15,9 @@
       confirm_os_window_close = 0;
     };
   };
+
+
+  # === Fish Shell ===
   
   programs.fish = {
     enable = true;
@@ -31,6 +36,9 @@
   in
     "${catppuccin-fish}/themes/Catppuccin Mocha.theme";
 
+
+  # === Helix Editor ===
+  
   programs.helix = {
     enable = true;
     settings = {
@@ -47,14 +55,27 @@
     };
   };
 
+
+  # === Zoxide ===
+  
   programs.zoxide.enable = true;
 
+
+  # === Zellij ===
+  
   programs.zellij = {
     enable = true;
     settings = {
       theme = "catppuccin-mocha";
     };
   };
+
+  xdg.configFile."zellij/layouts" = {
+    source = ./resources/Zellij-Layouts;
+    recursive = true;
+  };
+
+  # === Lazygit ===
 
   programs.lazygit = {
     enable = true;
@@ -78,6 +99,9 @@
     };
   };
 
+
+  # === Git ===
+
   programs.git = {
     enable = true;
     userName = "Xaver106";
@@ -86,11 +110,17 @@
     signing.signByDefault = true;
   };
 
+
+  # === EZA ===
+
   programs.eza = {
     enable = true;
     icons = true;
     extraOptions = [ "--group-directories-first" ];
   };
+
+
+  # === Ranger ===
   
   programs.ranger = {
     enable = true;
@@ -119,6 +149,8 @@
     '';
   };
 
+
+  # === Btop ===
   
   xdg.configFile."btop/themes/catppuccin_mocha.theme".source = let
     catppuccin-btop = pkgs.fetchFromGitHub {
