@@ -18,12 +18,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs: let
-    hm-defaults = {
-      home-manager.useGlobalPkgs = true;
-      home-manager.useUserPackages = true;
-    };
-  in rec {
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs: rec {
 
     nixosConfigurations = {
       "Xavers-nixDesktop" = nixpkgs.lib.nixosSystem rec {
