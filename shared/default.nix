@@ -161,6 +161,7 @@
     sssnake
     steam-tui
     nix-tree
+    ventoy-full
 
     /*
     Matrix Clients
