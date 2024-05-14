@@ -225,6 +225,7 @@
     swiProlog # Prolog
     cargo # Rust Compiler
     rustup # Rust Toolchain installer
+    typst # Typst Language framework
 
     # Language Servers
     lua-language-server # Lua Language Server
