@@ -236,6 +236,7 @@
     marksman # Markdown Language Server
     rust-analyzer # Rust Language Server
     haskell-language-server # Haskell Language Server
+    typst-lsp # Language Server for the Typst language
 
     # Formatters
     bibtex-tidy # Latex Formatter
@@ -261,6 +262,7 @@
     speedtest-cli
     helix # Text Editor
     fastfetch # Fast neofetch implementation
+    pandoc
 
     # Neovim + Lazy.vim Requirements
     neovim
