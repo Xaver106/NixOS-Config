@@ -162,6 +162,8 @@
     steam-tui
     nix-tree
     ventoy-full
+    colobot # Game
+    qimgv # Photo Editor
 
     /*
     Matrix Clients
