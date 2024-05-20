@@ -11,36 +11,9 @@
       ../modules/dnscrypt.nix # DNSCrypt Module
     ];
 
-  # Select internationalisation properties.
-  time.timeZone = "Europe/Berlin"; # Set timezone to Berlin
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "de_DE.UTF-8";
-    LC_IDENTIFICATION = "de_DE.UTF-8";
-    LC_MEASUREMENT = "de_DE.UTF-8";
-    LC_MONETARY = "de_DE.UTF-8";
-    LC_NAME = "de_DE.UTF-8";
-    LC_NUMERIC = "de_DE.UTF-8";
-    LC_PAPER = "de_DE.UTF-8";
-    LC_TELEPHONE = "de_DE.UTF-8";
-    LC_TIME = "de_DE.UTF-8";
-  };
 
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
 
-  # Enable Networking and configure
-  networking.networkmanager.enable = true; 
-  # Enable and configure my own DNSCrypt Module
-  dnscrypt-module = {
-    enable = true;
-    serverNames = [ "cloudflare-security" "cloudflare-security-ipv6" ];
-    forwardingRules = [
-      { domain = "local"; servers = [ "192.168.10.1" ]; }
-      { domain = "fritz.box"; servers = [ "192.168.10.1" ]; }
-      { domain = "login.wifionice.de"; servers = [ "172.18.0.1" ]; }
-      { domain = "iceportal.de"; servers = [ "172.18.0.1" ]; }
-    ];
-  };
 
   # Enable Bluetoth, obviously...
   hardware.bluetooth = {
@@ -80,24 +53,7 @@
     openFirewall = true;
   };
 
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
 
-  environment = {
-    # Set the default text editor
-    variables = {
-      EDITOR = "hx";
-      VISUAL = "hx";
-    };
-  };
 
 
   # Define my user account.
@@ -149,7 +105,6 @@
     libsForQt5.filelight # Disk Usage Analyzer
     tor-browser # Tor Browser
     ntfs3g # NTFS Support
-    freecad # CAD Software
     zettlr # Note Taking App
     logseq # Note Taking App
     unzip

@@ -18,10 +18,18 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs: rec {
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs: 
+  let
+    inherit (self) outputs;
+    inherit (nixpkgs) lib;
+    configLib = import ./lib { inherit lib; };
+    specialArgs = { inherit inputs outputs configLib nixpkgs; };
+  in
+  {
 
     nixosConfigurations = {
       "Xavers-nixDesktop" = nixpkgs.lib.nixosSystem rec {
+        inherit specialArgs;
         system = "x86_64-linux";
 
         modules = [
@@ -40,6 +48,7 @@
         ];
       };
       "Xavers-Laptop" = nixpkgs.lib.nixosSystem  rec {
+        inherit specialArgs;
         system = "x86_64-linux";
 
         modules = [
