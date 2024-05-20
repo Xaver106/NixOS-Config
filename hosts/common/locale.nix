@@ -9,6 +9,7 @@
   };
 
   config = {
+
     # Select internationalisation properties.
     time.timeZone = "Europe/Berlin"; # Set timezone to Berlin
     i18n.defaultLocale = "en_US.UTF-8";
@@ -23,5 +24,13 @@
       LC_TELEPHONE = "de_DE.UTF-8";
       LC_TIME = "de_DE.UTF-8";
     };
+
+    # Configure keymap in X11
+    services.xserver.xkb = {
+      layout = "de";
+      variant = "";
+    };
+    console.keyMap = "de"; # Configure console keymap
+    
   };
 }

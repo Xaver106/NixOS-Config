@@ -8,7 +8,7 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./nvidia.nix
+      ./modules/nvidia.nix
     ];
 
   networking.hostName = "Xavers-nixDesktop";

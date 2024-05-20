@@ -8,18 +8,11 @@
 
   imports =
     [
-      ../modules/dnscrypt.nix # DNSCrypt Module
+      "../modules/dnscrypt.nix" # DNSCrypt Module
     ];
 
 
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
-
-
-  # Enable Bluetoth, obviously...
-  hardware.bluetooth = {
-    enable = true; # enables support for Bluetooth
-    powerOnBoot = true; # powers up the default Bluetooth controller on boot
-  };
 
   services.xserver.enable = true; # Enable the X11 windowing system.
 
@@ -38,24 +31,6 @@
   services.xserver.desktopManager.plasma5.enable = false; # Enable KDE Plasma 5
   services.desktopManager.plasma6.enable = true; # Enable KDE Plasma 6
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "de";
-    variant = "";
-  };
-  console.keyMap = "de"; # Configure console keymap
-
-  # Enable printing services
-  services.printing.enable = true; # Enable CUPS to print documents.
-  services.avahi = { # Auto detect Network printers
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-  };
-
-
-
-
   # Define my user account.
   users.users.xaver106 = {
     isNormalUser = true;
@@ -70,12 +45,6 @@
   };
   users.defaultUserShell = pkgs.fish; # Set default shell to fish
 
-  fonts = {
-    enableDefaultPackages = true; # Install some general default fonts
-    packages = with pkgs; [
-      nerdfonts # All Nerdfonts 
-    ];
-  };
 
   # Installed packages
   environment.systemPackages = with pkgs; [
@@ -108,7 +77,6 @@
     zettlr # Note Taking App
     logseq # Note Taking App
     unzip
-    keymapp
     ungoogled-chromium
     desktop-file-utils # Desktop File Utilities
     localsend # Air-Drop alternative
@@ -282,58 +250,6 @@
     teamviewer.enable = true; # Remote Desktop
   };
   
-  services.udev.packages = [ (pkgs.writeTextDir "etc/udev/rules.d/50-zsa.rules"
-    ''
-    # Rules for Oryx web flashing and live training
-    KERNEL=="hidraw*", ATTRS{idVendor}=="16c0", MODE="0664", GROUP="plugdev"
-    KERNEL=="hidraw*", ATTRS{idVendor}=="3297", MODE="0664", GROUP="plugdev"
-
-    # Legacy rules for live training over webusb (Not needed for firmware v21+)
-      # Rule for all ZSA keyboards
-      SUBSYSTEM=="usb", ATTR{idVendor}=="3297", GROUP="plugdev"
-      # Rule for the Moonlander
-      SUBSYSTEM=="usb", ATTR{idVendor}=="3297", ATTR{idProduct}=="1969", GROUP="plugdev"
-      # Rule for the Ergodox EZ
-      SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="1307", GROUP="plugdev"
-      # Rule for the Planck EZ
-      SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="6060", GROUP="plugdev"
-
-    # Wally Flashing rules for the Ergodox EZ
-    ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", ENV{ID_MM_DEVICE_IGNORE}="1"
-    ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789A]?", ENV{MTP_NO_PROBE}="1"
-    SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789ABCD]?", MODE:="0666"
-    KERNEL=="ttyACM*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", MODE:="0666"
-
-    # Keymapp / Wally Flashing rules for the Moonlander and Planck EZ
-    SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", MODE:="0666", SYMLINK+="stm32_dfu"
-    # Keymapp Flashing rules for the Voyager
-    SUBSYSTEMS=="usb", ATTRS{idVendor}=="3297", MODE:="0666", SYMLINK+="ignition_dfu"
-    ''
-    ) ];
-
-  nix = {
-    gc = { # Enable Garbage Collection
-      automatic = true;
-      dates = "daily"; # Fire daily
-      options = "--delete-older-than 7d"; # Delete Generations older than 7 days
-    };
-    settings = {
-      auto-optimise-store = true; # Try to reduce size of nix Store
-      experimental-features = [ "nix-command" "flakes" ]; # Enable Flakes and the nix Command
-    };
-    #Add the system flake locatet at /etc/nixos to the registry as "system"
-    registry."system" = {
-      from = {
-        id = "system";
-        type = "indirect";
-      }; 
-      to = {
-        path = "/etc/nixos/";
-        type = "path";
-      };
-    };
-
-  };
 
 
   # This value determines the NixOS release from which the default
