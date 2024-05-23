@@ -11,6 +11,8 @@ layout {
             plugin location="zellij:status-bar"
         }
     }
+
+	tab name="Shell (File Management)"
 	
 	tab name="Editor" focus=true {
 		pane command="hx" name="Helix"{
@@ -18,12 +20,12 @@ layout {
 		}
  	}
 
+	tab name="Git" {
+		pane name="Lazygit" command="lazygit"
+	}
+
 	tab name="Shell" {
 		pane size="20%" name="Shell"
 		pane command="btop" size="80%" name="Btop"
-	}
-
-	tab name="Git" {
-		pane name="Lazygit" command="lazygit"
 	}
 }
