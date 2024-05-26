@@ -150,7 +150,6 @@
     libsForQt5.filelight # Disk Usage Analyzer
     tor-browser # Tor Browser
     ntfs3g # NTFS Support
-    freecad # CAD Software
     zettlr # Note Taking App
     logseq # Note Taking App
     unzip
