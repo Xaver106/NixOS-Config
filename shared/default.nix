@@ -9,6 +9,7 @@
   imports =
     [
       ../modules/dnscrypt.nix # DNSCrypt Module
+      ./obs.nix
     ];
 
   # Select internationalisation properties.
