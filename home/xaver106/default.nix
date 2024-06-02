@@ -4,6 +4,11 @@
   home.username = "xaver106";
   home.homeDirectory = "/home/xaver106";
 
+  # === General ===
+
+  home.shellAliases = {
+    "nixedit" = "zellij -l nix";
+  };
 
   # === Kitty ===
   
