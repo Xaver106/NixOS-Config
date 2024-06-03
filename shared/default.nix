@@ -10,6 +10,7 @@
     [
       ../modules/dnscrypt.nix # DNSCrypt Module
       ./obs.nix
+      ./docs.nix
     ];
 
   # Select internationalisation properties.
@@ -274,8 +275,6 @@
     ripgrep
 
     # Man Pages + tldr
-    man-pages # man pages for Linux
-    man-pages-posix # man pages for POSIX
     tldr # Short explanations for commands
   ];
 
