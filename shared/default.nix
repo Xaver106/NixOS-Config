@@ -234,7 +234,12 @@
     lua-language-server # Lua Language Server
     texlab # Latex Language Server
     nil # Nix Language Server
-    python311Packages.python-lsp-server # Python Language Server
+    python312Packages.python-lsp-server # Python Language Server
+    python312Packages.python-lsp-ruff
+    python312Packages.pylsp-rope
+    python312Packages.pylsp-mypy
+    python312Packages.pyls-memestra
+    python312Packages.pyls-isort
     jdt-language-server # Java Language Server
     gopls # Go Language Server
     nodePackages_latest.vscode-json-languageserver # JSON + JSONC Language Server
