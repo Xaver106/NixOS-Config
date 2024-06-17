@@ -30,6 +30,10 @@
 
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-27.3.11" # used by logseq
+  ];
+
   # Enable Networking and configure
   networking.networkmanager.enable = true; 
   # Enable and configure my own DNSCrypt Module
@@ -155,7 +159,7 @@
     logseq # Note Taking App
     unzip
     keymapp
-    ungoogled-chromium
+    # ungoogled-chromium
     desktop-file-utils # Desktop File Utilities
     localsend # Air-Drop alternative
     telegram-desktop # Telegram Messenger
