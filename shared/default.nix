@@ -150,7 +150,6 @@
     wget # Download Manager
     goodvibes # Internet Radio Player
     kitty # Terminal Emulator
-    anki-bin # Flashcard App (see Wiki https://nixos.wiki/wiki/Anki)
     josm # OpenStreetMap Editor
     libsForQt5.filelight # Disk Usage Analyzer
     tor-browser # Tor Browser
@@ -162,13 +161,12 @@
     # ungoogled-chromium
     desktop-file-utils # Desktop File Utilities
     localsend # Air-Drop alternative
-    telegram-desktop # Telegram Messenger
     sssnake
     steam-tui
     nix-tree
     ventoy-full
-    colobot # Game
     qimgv # Photo Editor
+    audacity # audio editing
 
     /*
     Matrix Clients
@@ -182,9 +180,6 @@
     gittyup
     lazygit # Git TUI
 
-    # Build Tools
-    maven # Build Tool for Java
-    gradle # Build Tool for Java
 
     # Image Editing
     inkscape # Vector Graphics Editor
@@ -202,7 +197,7 @@
     kate # Text Editor
 
     # Latex
-    texlive.combined.scheme-full # Latex
+    texlive.combined.scheme-full # Latex NOTE: Fuck You
     tectonic # Modern Latex Compiler
     jabref # Reference Manager
 
@@ -221,6 +216,10 @@
     teamspeak_client # Teamspeak
     (pkgs.discord.override {withVencord = true;}) # Discord + Vencord
     vesktop
+
+    # Build Tools
+    maven # Build Tool for Java
+    gradle # Build Tool for Java
 
     # Coding Languages + Compilers
     # Java Installed trough programs.java
@@ -271,12 +270,9 @@
     speedtest-cli
     helix # Text Editor
     fastfetch # Fast neofetch implementation
-    pandoc
-
-    # Neovim + Lazy.vim Requirements
-    neovim
-    fd
-    ripgrep
+    pandoc # convert textfiles
+    fd # find alternative
+    ripgrep # grep alternative
 
     # Man Pages + tldr
     tldr # Short explanations for commands
@@ -301,14 +297,11 @@
     java = {
       enable = true;
     };
-
     steam = {
       enable = true;
       gamescopeSession.enable = true;
     };
-
     gamescope.enable = true;
-
     ssh.startAgent = true; # Start SSH Agent on login
     dconf.enable = true; # orrect KDE Theme on Wayland
     gnupg.agent = {
