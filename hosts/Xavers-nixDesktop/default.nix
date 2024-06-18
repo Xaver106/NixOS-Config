@@ -39,7 +39,7 @@
 
   # Streamdeck UI to control Elgato Stream Deck
   programs.streamdeck-ui = {
-    enable = true;
+    enable = false;
     autoStart = false; # optional
   };
 
