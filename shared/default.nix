@@ -30,10 +30,6 @@
 
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-27.3.11" # used by logseq
-  ];
-
   # Enable Networking and configure
   networking.networkmanager.enable = true; 
   # Enable and configure my own DNSCrypt Module
@@ -154,8 +150,7 @@
     libsForQt5.filelight # Disk Usage Analyzer
     tor-browser # Tor Browser
     ntfs3g # NTFS Support
-    zettlr # Note Taking App
-    logseq # Note Taking App
+    # logseq # Note Taking App
     unzip
     keymapp
     # ungoogled-chromium
