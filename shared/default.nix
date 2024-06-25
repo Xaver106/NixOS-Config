@@ -163,6 +163,11 @@
     qimgv # Photo Editor
     audacity # audio editing
 
+    /* ReMarkable Software
+      https://github.com/reHackable/awesome-reMarkable
+    */
+    rmview # Screenshare for the ReMarkable Tablet (NOTE: Needs UDP Port 5901 open)
+
     /*
     Matrix Clients
     https://nixos.wiki/wiki/Matrix
@@ -351,6 +356,10 @@
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="3297", MODE:="0666", SYMLINK+="ignition_dfu"
     ''
     ) ];
+
+    networking.firewall.allowedUDPPorts = [ 
+      5901 # Port needs to be open for rmview
+    ];
 
   nix = {
     gc = { # Enable Garbage Collection
