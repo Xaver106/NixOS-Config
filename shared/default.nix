@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ lib, config, options, pkgs, ... }:
+{ inputs, outputs, lib, config, options, pkgs, ... }:
 
 {
 
@@ -29,6 +29,10 @@
   };
 
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
+  nixpkgs.overlays = [
+    outputs.overlays.master-packages
+    outputs.overlays.stable-packages
+  ];
 
   # Enable Networking and configure
   networking.networkmanager.enable = true; 
@@ -214,7 +218,7 @@
     signal-desktop # Signal Messenger
     threema-desktop # Threema Messenger
     teamspeak_client # Teamspeak
-    (pkgs.discord.override {withVencord = true;}) # Discord + Vencord
+    (pkgs.master.discord.override {withVencord = true;}) # Discord + Vencord
     vesktop
 
     # Build Tools

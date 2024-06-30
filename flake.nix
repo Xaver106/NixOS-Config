@@ -7,6 +7,8 @@
 
     # Official NixOS package sources
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
     # Home Manager
     home-manager.url = "github:nix-community/home-manager";
@@ -18,11 +20,21 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs: rec {
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs: let
+    inherit (self) outputs;
+  in rec {
 
+    /*===== Overlays =====*/
+    overlays = import ./overlays {inherit inputs;};
+
+    /******* Nixos Configurations *******/
     nixosConfigurations = {
+
       "Xavers-nixDesktop" = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
+
+        # Pass all Inputs to the modules
+        specialArgs = {inherit inputs outputs;};
 
         modules = [
           ./shared
@@ -39,8 +51,12 @@
           }
         ];
       };
+
       "Xavers-Laptop" = nixpkgs.lib.nixosSystem  rec {
         system = "x86_64-linux";
+
+        # Pass all Inputs to the modules
+        specialArgs = {inherit inputs outputs;};
 
         modules = [
           ./shared
