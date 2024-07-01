@@ -77,7 +77,8 @@
     variant = "";
   };
   console.keyMap = "de"; # Configure console keymap
-
+  console.catppuccin.enable = true;
+  
   # Enable printing services
   services.printing.enable = true; # Enable CUPS to print documents.
   services.avahi = { # Auto detect Network printers
@@ -140,7 +141,7 @@
     spotify # Music Streaming
     thunderbird # E-Mail Client
     rpi-imager # Raspberry Pi Imager
-    qalculate-qt # calculator
+    # qalculate-qt # calculator
     # bottles # Wine Wrapper
     # wineWowPackages.full 
     # winetricks
@@ -216,7 +217,6 @@
 
     # Communication
     signal-desktop # Signal Messenger
-    threema-desktop # Threema Messenger
     teamspeak_client # Teamspeak
     (pkgs.master.discord.override {withVencord = true;}) # Discord + Vencord
     vesktop
@@ -268,7 +268,7 @@
     btop # Resource Monitor
     bat # Cat Clone
     eza # File listing
-    thefuck # Correct Command mistakes
+    # thefuck # Correct Command mistakes
     mc # File manager TUI
     dig # DNS Lookup
     gpg-tui # GPG TUI
