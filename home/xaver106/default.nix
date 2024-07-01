@@ -10,11 +10,14 @@
     "nixedit" = "zellij -l nix";
   };
 
+
+  catppuccin = {
+    enable = true;
+  };
   # === Kitty ===
   
   programs.kitty = {
     enable = true;
-    theme = "Catppuccin-Mocha";
     font.name = "IosevkaTerm Nerd Font";
     settings = {
       confirm_os_window_close = 0;
@@ -26,28 +29,26 @@
   
   programs.fish = {
     enable = true;
-    shellInit = ''
-      fish_config theme choose "Catppuccin Mocha"
-    '';
   };
 
-  xdg.configFile."fish/themes/Catppuccin Mocha.theme".source = let
-    catppuccin-fish = pkgs.fetchFromGitHub {
-      owner = "catppuccin";
-      repo = "fish";
-      rev = "0ce27b518e8ead555dec34dd8be3df5bd75cff8e";
-      hash = "sha256-Dc/zdxfzAUM5NX8PxzfljRbYvO9f9syuLO8yBr+R3qg=";
-    };
-  in
-    "${catppuccin-fish}/themes/Catppuccin Mocha.theme";
+  # === Bat ===
 
+  programs.bat = {
+    enable = true;
+  };
+
+
+  # === fzf ===
+
+  programs.fzf = {
+    enable = true;
+  };
 
   # === Helix Editor ===
   
   programs.helix = {
     enable = true;
     settings = {
-      theme = "catppuccin_mocha";
       editor = {
         color-modes = true;
         cursor-shape = {
@@ -73,9 +74,6 @@
   
   programs.zellij = {
     enable = true;
-    settings = {
-      theme = "catppuccin-mocha";
-    };
   };
 
   xdg.configFile."zellij/layouts" = {
@@ -87,24 +85,6 @@
 
   programs.lazygit = {
     enable = true;
-    settings = {
-      gui = {
-        theme = {
-          activeBorderColor = [ "#89b4fa" "bold" ];
-          inactiveBorderColor = [ "#a6adc8" ];
-          optionsTextColor = [ "#89b4fa" ];
-          selectedLineBgColor = [ "#313244" ];
-          cherryPickedCommitBgColor = [ "#45475a" ];
-          cherryPickedCommitFgColor = [ "#89b4fa" ];
-          unstagedChangesColor = [ "#f38ba8" ];
-          defaultFgColor = [ "#cdd6f4" ];
-          searchingActiveBorderColor = [ "#f9e2af" ];
-        };
-        authorColors = {
-          "*" = "#b4befe";
-        };
-      };
-    };
   };
 
 
@@ -162,21 +142,8 @@
 
   programs.btop = {
     enable = true;
-    settings = {
-      color_theme = "catppuccin_mocha";
-    };
   };
   
-  xdg.configFile."btop/themes/catppuccin_mocha.theme".source = let
-    catppuccin-btop = pkgs.fetchFromGitHub {
-      owner = "catppuccin";
-      repo = "btop";
-      rev = "c6469190f2ecf25f017d6120bf4e050e6b1d17af";
-      hash = "sha256-jodJl4f2T9ViNqsY9fk8IV62CrpC5hy7WK3aRpu70Cs=";
-    };
-  in
-    "${catppuccin-btop}/themes/catppuccin_mocha.theme";
-
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new home Manager release introduces backwards

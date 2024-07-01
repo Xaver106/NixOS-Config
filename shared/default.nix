@@ -77,7 +77,8 @@
     variant = "";
   };
   console.keyMap = "de"; # Configure console keymap
-
+  console.catppuccin.enable = true;
+  
   # Enable printing services
   services.printing.enable = true; # Enable CUPS to print documents.
   services.avahi = { # Auto detect Network printers
