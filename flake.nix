@@ -14,13 +14,15 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Catppuccin
+    catppuccin.url = "github:catppuccin/nix";
 
     # nixos-hardware
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs: let
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, catppuccin, ... }@inputs: let
     inherit (self) outputs;
   in rec {
 
@@ -41,13 +43,17 @@
           ./hosts/Xavers-nixDesktop
           nixos-hardware.nixosModules.common-cpu-intel
           nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
+          catppuccin.nixosModules.catppuccin
 
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.xaver106 = import ./home/xaver106;
+            home-manager.users.xaver106.imports = [
+              ./home/xaver106
+              catppuccin.homeManagerModules.catppuccin
+            ];
           }
         ];
       };
@@ -62,13 +68,17 @@
           ./shared
           ./hosts/Xavers-Laptop
           nixos-hardware.nixosModules.framework-11th-gen-intel
+          catppuccin.nixosModules.catppuccin
 
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.xaver106 = import ./home/xaver106;
+            home-manager.users.xaver106.imports = [
+              ./home/xaver106
+              catppuccin.homeManagerModules.catppuccin
+            ];
           }
         ];
       };
