@@ -136,12 +136,11 @@
     filezilla # FTP Client
     cryptomator # Encryption Tool
     prusa-slicer # 3D Printer Slicer
-    nextcloud-client # Nextcloud Client
+    master.nextcloud-client # Nextcloud Client
     firefox # Web Browser
     spotify # Music Streaming
     thunderbird # E-Mail Client
     rpi-imager # Raspberry Pi Imager
-    qalculate-qt # calculator
     # bottles # Wine Wrapper
     # wineWowPackages.full 
     # winetricks
@@ -152,7 +151,7 @@
     goodvibes # Internet Radio Player
     kitty # Terminal Emulator
     josm # OpenStreetMap Editor
-    libsForQt5.filelight # Disk Usage Analyzer
+    kdePackages.filelight # Disk Usage Analyzer
     tor-browser # Tor Browser
     ntfs3g # NTFS Support
     # logseq # Note Taking App
@@ -181,7 +180,6 @@
 
     # Git + Tools
     gitFull # Git
-    # smartgithg # Git GUI
     gittyup
     lazygit # Git TUI
 
@@ -217,7 +215,6 @@
 
     # Communication
     signal-desktop # Signal Messenger
-    threema-desktop # Threema Messenger
     teamspeak_client # Teamspeak
     (pkgs.master.discord.override {withVencord = true;}) # Discord + Vencord
     vesktop
@@ -269,7 +266,7 @@
     btop # Resource Monitor
     bat # Cat Clone
     eza # File listing
-    thefuck # Correct Command mistakes
+    master.thefuck # Correct Command mistakes
     mc # File manager TUI
     dig # DNS Lookup
     gpg-tui # GPG TUI
