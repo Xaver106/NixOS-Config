@@ -166,6 +166,7 @@
     ventoy-full
     qimgv # Photo Editor
     audacity # audio editing
+    ticktick # Todo management
 
     /* ReMarkable Software
       https://github.com/reHackable/awesome-reMarkable
