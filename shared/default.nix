@@ -279,6 +279,7 @@
     pandoc # convert textfiles
     fd # find alternative
     ripgrep # grep alternative
+    lshw # list hardware
 
     # Man Pages + tldr
     tldr # Short explanations for commands
