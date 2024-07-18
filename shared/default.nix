@@ -280,6 +280,7 @@
     fd # find alternative
     ripgrep # grep alternative
     lshw # list hardware
+    fdupes # find duplicate Files
 
     # Man Pages + tldr
     tldr # Short explanations for commands
