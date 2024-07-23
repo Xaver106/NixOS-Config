@@ -218,6 +218,14 @@
     (pkgs.master.discord.override {withVencord = true;}) # Discord + Vencord
     vesktop
 
+    # Calculators
+    rink # Unit-aware calculator
+    programmer-calculator # Terminal calculator for programmers
+    ipcalc # Simple IP network calculator
+    qalculate-qt # Ultimate desktop calculator
+    kalker # Command line calculator
+    
+
     # Build Tools
     maven # Build Tool for Java
     gradle # Build Tool for Java
