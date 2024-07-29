@@ -132,7 +132,6 @@
     # Unsorted
     gparted # Partition Manager
     filezilla # FTP Client
-    cryptomator # Encryption Tool
     prusa-slicer # 3D Printer Slicer
     master.nextcloud-client # Nextcloud Client
     firefox # Web Browser
@@ -182,13 +181,24 @@
     gittyup
     lazygit # Git TUI
 
+    # Encryption Tools
+    cryptomator # Encryption Tool
+    veracrypt # Free Open-Source filesystem on-the-fly encryption
+    picocrypt # Very small, very simple, yet very secure encryption tool, written in Go
+
+    # GPG
+    # GPG enabled with `programs.gnupg.agent.enable` down
+    gpgme # Library for making GnuPG easier to use
+    gpg-tui # Terminal user interface for GnuPG
+    kdePackages.kleopatra # Certificate manager and GUI for OpenPGP and CMS cryptography
 
     # Image Editing
     inkscape # Vector Graphics Editor
     gimp # Image Editor
     
-    # Authentication
+    # Yubikey
     yubioath-flutter # Yubikey Authenticator
+    yubikey-manager
     yubikey-manager-qt # Yubikey Manager GUI
     yubikey-personalization # Yubikey Personalization CLI
     yubikey-personalization-gui # Yubikey Personalization GUI
@@ -276,7 +286,6 @@
     master.thefuck # Correct Command mistakes
     mc # File manager TUI
     dig # DNS Lookup
-    gpg-tui # GPG TUI
     ranger # Console File Manager
     fzf # Search tool
     tmux # Terminal Multiplexer
