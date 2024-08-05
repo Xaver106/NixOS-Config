@@ -297,6 +297,8 @@
     fd # find alternative
     ripgrep # grep alternative
     lshw # list hardware
+    inxi
+    pciutils
     fdupes # find duplicate Files
 
     # Man Pages + tldr
