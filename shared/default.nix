@@ -197,7 +197,7 @@
     gimp # Image Editor
     
     # Yubikey
-    yubioath-flutter # Yubikey Authenticator
+    yubioath-flutter # Yubikey Authenticator DEPEND: pcscd
     yubikey-manager
     yubikey-manager-qt # Yubikey Manager GUI
     yubikey-personalization # Yubikey Personalization CLI
@@ -281,6 +281,7 @@
     chezmoi # Dotfile Manager 
     dust # Disk Usage Statistics
     btop # Resource Monitor
+    killall # Kill by name
     bat # Cat Clone
     eza # File listing
     master.thefuck # Correct Command mistakes
@@ -349,35 +350,39 @@
     pcscd.enable = true; # Needed for yubico authenticator (Smart Card Reader)
     teamviewer.enable = true; # Remote Desktop
   };
-  
-  services.udev.packages = [ (pkgs.writeTextDir "etc/udev/rules.d/50-zsa.rules"
-    ''
-    # Rules for Oryx web flashing and live training
-    KERNEL=="hidraw*", ATTRS{idVendor}=="16c0", MODE="0664", GROUP="plugdev"
-    KERNEL=="hidraw*", ATTRS{idVendor}=="3297", MODE="0664", GROUP="plugdev"
 
-    # Legacy rules for live training over webusb (Not needed for firmware v21+)
-      # Rule for all ZSA keyboards
-      SUBSYSTEM=="usb", ATTR{idVendor}=="3297", GROUP="plugdev"
-      # Rule for the Moonlander
-      SUBSYSTEM=="usb", ATTR{idVendor}=="3297", ATTR{idProduct}=="1969", GROUP="plugdev"
-      # Rule for the Ergodox EZ
-      SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="1307", GROUP="plugdev"
-      # Rule for the Planck EZ
-      SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="6060", GROUP="plugdev"
+  services.udev.packages = [ 
+    pkgs.yubikey-manager
+    pkgs.yubikey-personalization
+    (pkgs.writeTextDir "etc/udev/rules.d/50-zsa.rules"
+      ''
+      # Rules for Oryx web flashing and live training
+      KERNEL=="hidraw*", ATTRS{idVendor}=="16c0", MODE="0664", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="3297", MODE="0664", GROUP="plugdev"
 
-    # Wally Flashing rules for the Ergodox EZ
-    ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", ENV{ID_MM_DEVICE_IGNORE}="1"
-    ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789A]?", ENV{MTP_NO_PROBE}="1"
-    SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789ABCD]?", MODE:="0666"
-    KERNEL=="ttyACM*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", MODE:="0666"
+      # Legacy rules for live training over webusb (Not needed for firmware v21+)
+        # Rule for all ZSA keyboards
+        SUBSYSTEM=="usb", ATTR{idVendor}=="3297", GROUP="plugdev"
+        # Rule for the Moonlander
+        SUBSYSTEM=="usb", ATTR{idVendor}=="3297", ATTR{idProduct}=="1969", GROUP="plugdev"
+        # Rule for the Ergodox EZ
+        SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="1307", GROUP="plugdev"
+        # Rule for the Planck EZ
+        SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="6060", GROUP="plugdev"
 
-    # Keymapp / Wally Flashing rules for the Moonlander and Planck EZ
-    SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", MODE:="0666", SYMLINK+="stm32_dfu"
-    # Keymapp Flashing rules for the Voyager
-    SUBSYSTEMS=="usb", ATTRS{idVendor}=="3297", MODE:="0666", SYMLINK+="ignition_dfu"
-    ''
-    ) ];
+      # Wally Flashing rules for the Ergodox EZ
+      ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", ENV{ID_MM_DEVICE_IGNORE}="1"
+      ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789A]?", ENV{MTP_NO_PROBE}="1"
+      SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789ABCD]?", MODE:="0666"
+      KERNEL=="ttyACM*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", MODE:="0666"
+
+      # Keymapp / Wally Flashing rules for the Moonlander and Planck EZ
+      SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", MODE:="0666", SYMLINK+="stm32_dfu"
+      # Keymapp Flashing rules for the Voyager
+      SUBSYSTEMS=="usb", ATTRS{idVendor}=="3297", MODE:="0666", SYMLINK+="ignition_dfu"
+      ''
+    )
+  ];
 
     networking.firewall.allowedUDPPorts = [ 
       5901 # Port needs to be open for rmview
