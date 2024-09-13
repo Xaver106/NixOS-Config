@@ -251,6 +251,7 @@
     cargo # Rust Compiler
     rustup # Rust Toolchain installer
     typst # Typst Language framework
+    bun # Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one
 
     # Language Servers
     lua-language-server # Lua Language Server
