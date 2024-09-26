@@ -133,7 +133,7 @@
     gparted # Partition Manager
     filezilla # FTP Client
     prusa-slicer # 3D Printer Slicer
-    master.nextcloud-client # Nextcloud Client
+    nextcloud-client # Nextcloud Client
     firefox # Web Browser
     spotify # Music Streaming
     thunderbird # E-Mail Client
