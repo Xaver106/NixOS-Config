@@ -247,7 +247,7 @@
     go # Go
     lua # Lua
     clang-tools # C/C++ Tools
-    swiProlog # Prolog
+    swi-prolog # Prolog
     cargo # Rust Compiler
     rustup # Rust Toolchain installer
     typst # Typst Language framework
