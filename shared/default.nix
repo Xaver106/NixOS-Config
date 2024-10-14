@@ -137,6 +137,7 @@
     firefox # Web Browser
     spotify # Music Streaming
     thunderbird # E-Mail Client
+    betterbird # Thunderbird alternative
     rpi-imager # Raspberry Pi Imager
     # bottles # Wine Wrapper
     # wineWowPackages.full 
@@ -302,6 +303,14 @@
     inxi
     pciutils
     fdupes # find duplicate Files
+
+    # Clipboard Utilitys
+    wl-clipboard # Command-line copy/paste utilities for Wayland
+    xclip # Tool to access the X clipboard from a console application
+
+    # Command Runner
+    master.go-task # A task runner / simpler Make alternative written in Go
+    just # Handy way to save and run project-specific commands
 
     # Man Pages + tldr
     tldr # Short explanations for commands
