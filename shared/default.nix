@@ -309,7 +309,7 @@
     xclip # Tool to access the X clipboard from a console application
 
     # Command Runner
-    master.go-task # A task runner / simpler Make alternative written in Go
+    go-task # A task runner / simpler Make alternative written in Go
     just # Handy way to save and run project-specific commands
 
     # Man Pages + tldr
