@@ -1,0 +1,22 @@
+version: '3'
+
+tasks:
+  update:
+    desc: Update flake inputs
+    cmds:
+      - nix flake update
+
+  rebuild:
+    desc: Rebuild NixOS and commit changes
+    cmds:
+      - sudo nixos-rebuild switch
+      - task: commit-after-rebuilt
+
+  commit-after-rebuilt:
+    internal: true
+    preconditions:
+      - sh: 'test "$(git rev-parse --abbrev-ref HEAD)" = "master"'
+        msg: "Not on master branch, skipping commit"
+    cmds:
+      - ./scripts/commit-routine.sh
+    silent: true
