@@ -30,13 +30,13 @@ if [[ "master" != $(git rev-parse --abbrev-ref HEAD) ]]; then
 fi
 
 # Check if working directory is clean
-if ! git diff --quiet HEAD; then
+if [[ -n "$(git status --porcelain)" ]]; then
     warn "Working directory has uncommitted changes"
     info "Stashing current changes"
-    git stash push -u -m "Temporary stash before rebuild" || error "Failed to stash changes"
-    STASHED=true
+    git stash push -u -m "Temporary stash" || error "Failed to stash changes"
 else
-    STASHED=false
+    info "no changes. Exiting"
+    exit 0
 fi
 
 # Store the original commit hash
@@ -53,10 +53,8 @@ cleanup() {
     fi
 
     # Restore stashed changes if any
-    if [[ "$STASHED" == true ]]; then
-        info "Restoring stashed changes"
-        git stash pop || warn "Failed to restore stashed changes"
-    fi
+    info "Restoring stashed changes"
+    git stash pop || warn "Failed to restore stashed changes, they are still stashed!"
 }
 
 # Set up trap to ensure cleanup runs even if script fails
@@ -71,26 +69,25 @@ else
     git checkout -f $parallelBranch || error "Failed to checkout existing branch"
 fi
 
+if ! git stash apply; then
+    warn "Stash apply failed - forcing stashed changes"
+    git checkout --theirs . || error "Failed to force stashed changes"
+    git add . || error "Failed to add resolved changes"
+fi
+
 # Make and commit changes - including all new and tracked files for complete rebuild state
 info "Adding and committing changes"
-if git add .; then
-    if ! git diff --cached --quiet; then
-        git commit -m "Rebuild $(date '+%d.%m.%Y %H:%M:%S')" || error "Failed to commit changes"
-    else
-        warn "No changes to commit"
-    fi
+git add . || error "Failed to add changes"
+
+if [[ -n "$(git status --porcelain)" ]]; then
+    git commit -m "Rebuild $(date '+%d.%m.%Y %H:%M:%S')" || error "Failed to commit changes"
 else
-    error "Failed to add changes"
+    warn "No changes to commit"
 fi
 
 # Return to master and merge
 info "Returning to master"
 git checkout master || error "Failed to checkout master"
-
-info "Merging changes"
-if ! git merge --no-edit --squash $parallelBranch; then
-    error "Merge failed"
-fi
 
 info "Script completed successfully"
 exit 0

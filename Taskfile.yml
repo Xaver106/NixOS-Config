@@ -12,6 +12,11 @@ tasks:
       - sudo nixos-rebuild switch
       - task: commit-after-rebuilt
 
+  gc:
+    desc: Run nix Garbage collector
+    cmds:
+      - sudo nix-collect-garbage -d
+
   commit-after-rebuilt:
     internal: true
     preconditions:
