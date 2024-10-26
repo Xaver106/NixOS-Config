@@ -143,6 +143,11 @@
   programs.btop = {
     enable = true;
   };
+
+  # === Custom Files ===
+
+  xdg.configFile."Taskfile.yml".source = ./resources/Taskfile.yml;
+  
   
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

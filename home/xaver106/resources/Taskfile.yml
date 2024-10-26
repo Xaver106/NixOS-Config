@@ -1,0 +1,9 @@
+version: '3'
+
+includes:
+  sys:
+    taskfile: ./nixos-config/Taskfile.yml
+    dir: ./nixos-config
+    flatten: true
+    optional: true
+  
