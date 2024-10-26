@@ -25,7 +25,7 @@ layout {
 	}
 
 	tab name="Shell" {
-		pane size="20%" name="Shell"
-		pane command="btop" size="80%" name="Btop"
+		pane size="30%" name="Shell"
+		pane command="btop" size="70%" name="Btop"
 	}
 }
