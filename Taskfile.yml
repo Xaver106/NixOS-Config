@@ -6,10 +6,16 @@ tasks:
     cmds:
       - nix flake update
 
-  rebuild:
-    desc: Rebuild NixOS and commit changes
+  rebuild-switch:
+    desc: Rebuild NixOS and switch immediatly
     cmds:
       - sudo nixos-rebuild switch
+      - task: commit-after-rebuilt
+
+  rebuild-boot:
+    desc: Rebuild NixOS and enable on next reboot 
+    cmds:
+      - sudo nixos-rebuild boot
       - task: commit-after-rebuilt
 
   gc:
