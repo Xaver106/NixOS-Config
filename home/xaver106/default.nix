@@ -146,7 +146,7 @@
 
   # === Custom Files ===
 
-  xdg.configFile."Taskfile.yml".source = ./resources/Taskfile.yml;
+  home.file."Taskfile.yml".source = ./resources/Taskfile.yml;
   
   
   # This value determines the home Manager release that your
