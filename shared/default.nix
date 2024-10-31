@@ -203,6 +203,7 @@
     yubikey-manager-qt # Yubikey Manager GUI
     yubikey-personalization # Yubikey Personalization CLI
     yubikey-personalization-gui # Yubikey Personalization GUI
+    opensc # Set of libraries and utilities to access smart cards
 
     # IDEs + Text Editors
     vscode # Visual Studio Code
@@ -235,6 +236,8 @@
     ipcalc # Simple IP network calculator
     qalculate-qt # Ultimate desktop calculator
     kalker # Command line calculator
+    octave # Scientific Programming Language
+    bitwise # Terminal based bitwise calculator in curses
     
 
     # Build Tools

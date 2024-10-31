@@ -2,23 +2,27 @@ version: '3'
 
 tasks:
   update:
+    aliases: [u]
     desc: Update flake inputs
     cmds:
       - nix flake update
 
   rebuild-switch:
+    aliases: [rb-s]
     desc: Rebuild NixOS and switch immediatly
     cmds:
       - sudo nixos-rebuild switch
       - task: commit-after-rebuilt
 
   rebuild-boot:
+    aliases: [rb-b]
     desc: Rebuild NixOS and enable on next reboot 
     cmds:
       - sudo nixos-rebuild boot
       - task: commit-after-rebuilt
 
-  gc:
+  garbage-collect:
+    aliases: [gc]
     desc: Run nix Garbage collector
     cmds:
       - sudo nix-collect-garbage -d
