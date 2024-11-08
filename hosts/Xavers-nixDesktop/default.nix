@@ -13,13 +13,13 @@
 
   networking.hostName = "Xavers-nixDesktop";
 
+  boot.initrd.systemd.enable = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   time.hardwareClockInLocalTime = true; # Fix windows showing wrong time
-
-  services.displayManager.defaultSession = "plasmax11";
 
   environment.systemPackages = with pkgs; [
     deckmaster # Elgato Stream Deck software

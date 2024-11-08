@@ -48,6 +48,7 @@
   
   programs.helix = {
     enable = true;
+    defaultEditor = true;
     settings = {
       editor = {
         color-modes = true;
