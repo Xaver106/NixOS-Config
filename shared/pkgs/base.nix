@@ -2,9 +2,9 @@
 with lib;
 
 let
-  cfg = config.shared.pkgs.cli.base;
+  cfg = config.shared.pkgs.base;
 in {
-  options.shared.pkgs.cli.base = {
+  options.shared.pkgs.base = {
     enable = mkEnableOption "Base packages";
   };
 

@@ -10,17 +10,21 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      # Office Suite
+      # Office Suite + Spell Checking
       libreoffice-qt           # Office suite
-
-      # Spell Checking
       hunspell                 # Spell checking
       hunspellDicts.de_DE     # German dictionary
       hunspellDicts.en_US     # English dictionary
 
+      # Calculators
+      geogebra6                # Math calculator
+
       # Task Management
       ticktick                # Todo/Task management
       lunatask                # Task management
+
+      # Reference Management
+      jabref                        # Reference manager for LaTeX TODO: good fit here?
     ];
   };
 }
