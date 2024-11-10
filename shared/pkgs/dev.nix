@@ -2,9 +2,9 @@
 with lib;
 
 let
-  cfg = config.shared.pkgs.cli.dev;
+  cfg = config.shared.pkgs.dev;
 in {
-  options.shared.pkgs.cli.dev = {
+  options.shared.pkgs.dev = {
     enable = mkEnableOption "Development packages";
   };
 

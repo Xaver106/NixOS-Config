@@ -76,9 +76,6 @@
       enable = true;
       openFirewall = true;
     };
-    java = {
-      enable = true;
-    };
     ssh.startAgent = true; # Start SSH Agent on login
 
     /*

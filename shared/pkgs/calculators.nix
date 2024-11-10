@@ -2,9 +2,9 @@
 with lib;
 
 let
-  cfg = config.shared.pkgs.cli.calculators;
+  cfg = config.shared.pkgs.calculators;
 in {
-  options.shared.pkgs.cli.calculators = {
+  options.shared.pkgs.calculators = {
     enable = mkEnableOption "Calculator packages";
   };
 

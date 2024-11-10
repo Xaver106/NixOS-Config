@@ -2,9 +2,9 @@
 with lib;
 
 let
-  cfg = config.shared.pkgs.cli.latex;
+  cfg = config.shared.pkgs.latex;
 in {
-  options.shared.pkgs.cli.latex = {
+  options.shared.pkgs.latex = {
     enable = mkEnableOption "LaTeX environment";
     full = mkEnableOption "Full TeX Live installation";
   };
@@ -20,9 +20,6 @@ in {
       # Development Tools
       texlab                        # LaTeX LSP
       bibtex-tidy                   # BibTeX formatter
-
-      # Reference Management
-      jabref                        # Reference manager
     ];
   };
 }
