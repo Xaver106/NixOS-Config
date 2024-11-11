@@ -19,7 +19,6 @@ in {
       kdePackages.kleopatra # Certificate manager
     ];
 
-    programs.gnupg.agent.enable = true;
 
   };
 }
