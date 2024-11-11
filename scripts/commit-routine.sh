@@ -24,10 +24,9 @@ warn() {
     echo "${YELLOW}WARNING: $1${RESET}"
 }
 
-# Check if we're on master
-if [[ "master" != $(git rev-parse --abbrev-ref HEAD) ]]; then
-    error "Not on master branch"
-fi
+# Store the original branch name
+original_branch=$(git rev-parse --abbrev-ref HEAD) || error "Failed to get current branch"
+info "Current branch: $original_branch"
 
 # Check if working directory is clean
 if [[ -n "$(git status --porcelain)" ]]; then
@@ -35,7 +34,7 @@ if [[ -n "$(git status --porcelain)" ]]; then
     info "Stashing current changes"
     git stash push -u -m "Temporary stash" || error "Failed to stash changes"
 else
-    info "no changes. Exiting"
+    info "No changes. Exiting"
     exit 0
 fi
 
@@ -46,10 +45,10 @@ parallelBranch="rebuilds-$lastCommit"
 cleanup() {
     info "Cleaning up..."
 
-    # Return to master if we're not already there
+    # Return to original branch if we're not already there
     current_branch=$(git rev-parse --abbrev-ref HEAD)
-    if [[ "$current_branch" != "master" ]]; then
-        git checkout master || warn "Failed to return to master"
+    if [[ "$current_branch" != "$original_branch" ]]; then
+        git checkout "$original_branch" || warn "Failed to return to $original_branch"
     fi
 
     # Restore stashed changes if any
@@ -85,9 +84,9 @@ else
     warn "No changes to commit"
 fi
 
-# Return to master and merge
-info "Returning to master"
-git checkout master || error "Failed to checkout master"
+# Return to original branch
+info "Returning to $original_branch"
+git checkout "$original_branch" || error "Failed to checkout $original_branch"
 
 info "Script completed successfully"
 exit 0

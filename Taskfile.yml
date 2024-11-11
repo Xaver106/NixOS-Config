@@ -27,6 +27,12 @@ tasks:
     cmds:
       - sudo nix-collect-garbage -d
 
+  cleanup-branches:
+    aliases: [cb]
+    desc: Cleanup old rebuid branches
+    cmds:
+      - ./scripts/cleanup.sh {{.CLI_ARGS}}
+
   commit-after-rebuilt:
     internal: true
     preconditions:
