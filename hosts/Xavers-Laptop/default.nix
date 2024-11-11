@@ -2,15 +2,18 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
     [
+      inputs.nixos-hardware.nixosModules.framework-11th-gen-intel
       ./hardware-configuration.nix
     ];
 
   networking.hostName = "Xavers-Laptop";
+
+  boot.initrd.systemd.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

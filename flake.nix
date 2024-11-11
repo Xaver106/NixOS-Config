@@ -41,20 +41,7 @@
         modules = [
           ./shared
           ./hosts/Xavers-nixDesktop
-          nixos-hardware.nixosModules.common-cpu-intel
-          nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
-          catppuccin.nixosModules.catppuccin
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-
-            home-manager.users.xaver106.imports = [
-              ./home/xaver106
-              catppuccin.homeManagerModules.catppuccin
-            ];
-          }
+          ./users/xaver106
         ];
       };
 
@@ -67,19 +54,7 @@
         modules = [
           ./shared
           ./hosts/Xavers-Laptop
-          nixos-hardware.nixosModules.framework-11th-gen-intel
-          catppuccin.nixosModules.catppuccin
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-
-            home-manager.users.xaver106.imports = [
-              ./home/xaver106
-              catppuccin.homeManagerModules.catppuccin
-            ];
-          }
+          ./users/xaver106
         ];
       };
     };

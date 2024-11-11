@@ -1,9 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "xaver106";
-  home.homeDirectory = "/home/xaver106";
-
   # === General ===
 
   home.shellAliases = {
@@ -14,6 +11,7 @@
   catppuccin = {
     enable = true;
   };
+
   # === Kitty ===
   
   programs.kitty = {
@@ -158,7 +156,7 @@
   # You can update home Manager without changing this value. See
   # the home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.11";
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
