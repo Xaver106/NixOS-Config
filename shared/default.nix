@@ -20,6 +20,7 @@
       ./yubikey.nix
       ./zsa.nix
       ./pkgs
+      ./specialisations
     ];
 
   shared = with lib; {
@@ -34,6 +35,7 @@
     documentation.enable = mkDefault true;
     fonts.enable = mkDefault true;
     pkgs.enable = mkDefault true;
+    specialisations.enable = mkDefault true;
   };
 
 
