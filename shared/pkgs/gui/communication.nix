@@ -26,6 +26,6 @@ in {
     ];
 
     # Noise Supression
-    noisetorch.enable = true;
+    programs.noisetorch.enable = true;
   };
 }
