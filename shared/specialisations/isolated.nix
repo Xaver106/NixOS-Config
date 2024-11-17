@@ -10,6 +10,11 @@ in {
 
   config = mkIf cfg.enable {
     specialisation.isolated.configuration = {
+      fileSystems."/tmp" = {
+        device = "none";
+        fsType = "tmpfs";
+        options = [ "size=3G" "mode=777" "noswap"];
+      };
 
       shared = {
         networking.enable = mkForce false;
