@@ -24,5 +24,8 @@ in {
       # Email
       thunderbird        # Email client
     ];
+
+    # Noise Supression
+    noisetorch.enable = true;
   };
 }

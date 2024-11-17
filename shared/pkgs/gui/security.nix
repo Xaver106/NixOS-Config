@@ -19,6 +19,7 @@ in {
       kdePackages.kleopatra # Certificate manager
     ];
 
+    programs._1password-gui.enable = true;
 
   };
 }

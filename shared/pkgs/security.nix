@@ -17,9 +17,16 @@ in {
       gnupg                 # GNU Privacy Guard
       gpgme                # GnuPG Made Easy
       gpg-tui             # Terminal UI for GnuPG
+
+      # Age Encryption
+      age # Modern encryption tool with small explicit keys
+      age-plugin-yubikey # YubiKey plugin for age 
     ];
 
-    programs.gnupg.agent.enable = true;
+    programs = {
+      gnupg.agent.enable = true;
+      _1password.enable = true; # 1Password CLI
+    };
 
   };
 }

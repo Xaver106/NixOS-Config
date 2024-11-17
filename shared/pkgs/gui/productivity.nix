@@ -18,6 +18,10 @@ in {
 
       # Calculators
       geogebra6                # Math calculator
+      speedcrunch # A fast power user calculator
+      kdePackages.kalgebra # 2D and 3D Graph Calculator
+      kdePackages.kcalc # Calculator offering everything a scientific calculator does, and more
+      qalculate-qt # Ultimate desktop calculator
 
       # Task Management
       ticktick                # Todo/Task management

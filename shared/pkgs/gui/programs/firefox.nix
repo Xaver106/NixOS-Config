@@ -9,11 +9,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    # Package installation
-    environment.systemPackages = with pkgs; [
-      firefox
-    ];
-
     # Additional configuration
     programs.firefox = {
       enable = true;
