@@ -7,6 +7,7 @@ in {
   imports = [
     ./printing.nix
     ./system.nix
+    ./remarkable.nix
   ];
 
   options.shared.pkgs.gui.specialized = {
@@ -17,6 +18,7 @@ in {
     shared.pkgs.gui.specialized = {
       printing.enable = mkDefault cfg.enable;
       system.enable = mkDefault cfg.enable;
+      remarkable.enable = mkDefault cfg.enable;
     };
   };
 }

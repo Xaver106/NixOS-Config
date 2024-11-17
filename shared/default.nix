@@ -52,13 +52,6 @@
   programs = {
     fish.enable = true; # Fish Shell
     kdeconnect.enable = true; # KDE Connect
-    _1password.enable = true; # 1Password CLI
-    _1password-gui = {
-      enable = true;
-      # Certain features, including CLI integration and system authentication support,
-      # require enabling PolKit integration on some desktop environments (e.g. Plasma).
-      polkitPolicyOwners = [ "xaver106" ];
-    };
     ausweisapp = {
       # Install German AusweisApp2 and open Firewall, so my phone can act ass a card reader
       enable = true;
@@ -71,8 +64,6 @@
     wiki: https://nixos.wiki/wiki/Android
     */
     adb.enable = true;
-    # Noise Supression
-    noisetorch.enable = true;
   };
 
   services = {

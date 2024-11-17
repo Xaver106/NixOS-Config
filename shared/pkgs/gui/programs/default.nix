@@ -7,7 +7,6 @@ in {
   imports = [
     ./obs.nix
     ./firefox.nix
-    ./rmview.nix
   ];
 
   options.shared.pkgs.gui.programs = {
@@ -18,7 +17,6 @@ in {
     shared.pkgs.gui.programs = {
       obs.enable = mkDefault cfg.enable;
       firefox.enable = mkDefault cfg.enable;
-      rmview.enable = mkDefault cfg.enable;
     };
   };
 }
