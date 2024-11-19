@@ -26,6 +26,7 @@ tasks:
     desc: Run nix Garbage collector
     cmds:
       - sudo nix-collect-garbage -d
+      - sudo /run/current-system/bin/switch-to-configuration boot
 
   cleanup-branches:
     aliases: [cb]
