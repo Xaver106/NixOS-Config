@@ -25,7 +25,7 @@
   security.pam.services.login.fprintAuth = false; # Disable fingerprint login (Kwallet doesn't unlock with it)
 
   systemd.sleep.extraConfig = ''
-    HibernateDelaySec=30min
+    HibernateDelaySec=1h
   '';
 
 
