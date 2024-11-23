@@ -21,6 +21,10 @@ in {
       # Age Encryption
       age # Modern encryption tool with small explicit keys
       age-plugin-yubikey # YubiKey plugin for age 
+
+      # Password Generators
+      xkcdpass # Generate secure multiword passwords/passphrases, inspired by XKCD
+      genpass # Simple yet robust commandline random password generator
     ];
 
     programs = {
