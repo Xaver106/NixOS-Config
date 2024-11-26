@@ -1,14 +1,14 @@
 {config, pkgs, lib, ...}:
 with lib;
 
-let cfg = shared.pkgs;
+let cfg = config.;
 in {
 
-  options.cfg = {
+  options. = {
     enable = mkEnableOption "";
   };
 
-  config = mkif cfg.enable {
+  config = mkIf cfg.enable {
     
     environment.systemPackages = with pkgs; [
       

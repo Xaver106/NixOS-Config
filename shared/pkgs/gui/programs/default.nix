@@ -5,8 +5,8 @@ let
   cfg = config.shared.pkgs.gui.programs;
 in {
   imports = [
-    ./obs.nix
     ./firefox.nix
+    ./obs.nix
   ];
 
   options.shared.pkgs.gui.programs = {
@@ -15,8 +15,8 @@ in {
 
   config = {
     shared.pkgs.gui.programs = {
-      obs.enable = mkDefault cfg.enable;
       firefox.enable = mkDefault cfg.enable;
+      obs.enable = mkDefault cfg.enable;
     };
   };
 }

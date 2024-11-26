@@ -6,9 +6,9 @@ let
 in {
   imports = [
     ./base.nix
+    ./calculators.nix
     ./dev.nix
     ./latex.nix
-    ./calculators.nix
     ./security.nix
     ./gui
   ];
@@ -19,11 +19,11 @@ in {
 
   config = {
     shared.pkgs = {
-      gui.enable = mkDefault cfg.enable;
       base.enable = mkDefault cfg.enable;
-      dev.enable = mkDefault cfg.enable;
-      latex.enable = mkDefault cfg.enable;
       calculators.enable = mkDefault cfg.enable;
+      dev.enable = mkDefault cfg.enable;
+      gui.enable = mkDefault cfg.enable;
+      latex.enable = mkDefault cfg.enable;
       security.enable = mkDefault cfg.enable;
     };
   };

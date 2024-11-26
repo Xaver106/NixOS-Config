@@ -24,18 +24,18 @@
     ];
 
   shared = with lib; {
-    locale-defaults.enable = mkDefault true;
-    networking.enable = mkDefault true;
-    plasma.enable = mkDefault true;
-    printing.enable = mkDefault true;
-    yubikey.enable = mkDefault true;
-    zsa.enable = mkDefault true;
     audio.enable = mkDefault true;
     bluetooth.enable = mkDefault true;
     documentation.enable = mkDefault true;
     fonts.enable = mkDefault true;
+    locale-defaults.enable = mkDefault true;
+    networking.enable = mkDefault true;
     pkgs.enable = mkDefault true;
+    plasma.enable = mkDefault true;
+    printing.enable = mkDefault true;
     specialisations.enable = mkDefault true;
+    yubikey.enable = mkDefault true;
+    zsa.enable = mkDefault true;
   };
 
 
