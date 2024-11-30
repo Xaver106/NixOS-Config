@@ -66,6 +66,7 @@ in {
 
       # Nix
       nil              # Nix LSP
+      nixd
       nixfmt-rfc-style           # Nix formatter
 
       # Typst
