@@ -12,7 +12,9 @@ in {
     fonts = {
       enableDefaultPackages = true; # Install some general default fonts
       packages = with pkgs; [
-        nerdfonts # All Nerdfonts 
+        # Nerdfonts
+        nerd-fonts.jetbrains-mono
+        nerd-fonts.symbols-only
       ];
     };
   };

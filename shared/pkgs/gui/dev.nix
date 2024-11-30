@@ -12,6 +12,7 @@ in {
     environment.systemPackages = with pkgs; [
       # IDEs
       vscode              # Visual Studio Code
+      zed-editor # High-performance, multiplayer code editor from the creators of Atom and Tree-sitter
       jetbrains-toolbox  # JetBrains IDE manager (IntelliJ, PyCharm, etc.)
 
       # Text Editors
