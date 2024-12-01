@@ -1,9 +1,15 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 
 let
   cfg = config.shared.pkgs.latex;
-in {
+in
+{
   options.shared.pkgs.latex = {
     enable = mkEnableOption "LaTeX environment";
     full = mkEnableOption "Full TeX Live installation";
@@ -15,11 +21,11 @@ in {
       (if cfg.full then texlive.combined.scheme-full else texlive.combined.scheme-basic)
 
       # Modern Engine
-      tectonic                      # Modern LaTeX engine
+      tectonic # Modern LaTeX engine
 
       # Development Tools
-      texlab                        # LaTeX LSP
-      bibtex-tidy                   # BibTeX formatter
+      texlab # LaTeX LSP
+      bibtex-tidy # BibTeX formatter
     ];
   };
 }

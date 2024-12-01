@@ -1,14 +1,20 @@
-{config, pkgs, lib, ...}:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 
 let
   cfg = config.shared.pkgs.gui.programs.obs;
-in {
+in
+{
 
   options.shared.pkgs.gui.programs.obs = {
     enable = mkEnableOption "obs";
   };
-  
+
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       (pkgs.wrapOBS {

@@ -1,8 +1,15 @@
-{config, pkgs, lib, ...}:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 
-let cfg = config.shared.audio;
-in {
+let
+  cfg = config.shared.audio;
+in
+{
 
   options.shared.audio = {
     enable = mkEnableOption "audio";

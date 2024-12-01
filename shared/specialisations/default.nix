@@ -1,9 +1,15 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 
-let 
+let
   cfg = config.shared.specialisations;
-in {
+in
+{
   imports = [
     ./isolated.nix
   ];
@@ -12,9 +18,9 @@ in {
     enable = mkEnableOption "All packages";
   };
 
-   config = {
+  config = {
     shared.specialisations = {
-      isolated.enable = mkDefault cfg.enable; 
+      isolated.enable = mkDefault cfg.enable;
     };
   };
 }

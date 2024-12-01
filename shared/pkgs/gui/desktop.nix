@@ -1,9 +1,15 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 
 let
   cfg = config.shared.pkgs.gui.desktop;
-in {
+in
+{
   options.shared.pkgs.gui.desktop = {
     enable = mkEnableOption "Desktop environment packages";
   };
@@ -11,15 +17,15 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       # Terminal Emulators
-      kitty                    # GPU-accelerated terminal emulator
+      kitty # GPU-accelerated terminal emulator
 
       # Disk Management
-      gparted                  # Partition manager
-      kdePackages.filelight    # Disk usage analyzer
-      kdiskmark                # Disk benchmarking tool
+      gparted # Partition manager
+      kdePackages.filelight # Disk usage analyzer
+      kdiskmark # Disk benchmarking tool
 
       # Desktop Integration
-      desktop-file-utils       # Command line utilities for desktop entries
+      desktop-file-utils # Command line utilities for desktop entries
     ];
   };
 }

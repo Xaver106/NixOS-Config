@@ -1,8 +1,15 @@
-{config, pkgs, lib, ...}:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 
-let cfg = config.shared.fonts;
-in {
+let
+  cfg = config.shared.fonts;
+in
+{
 
   options.shared.fonts = {
     enable = mkEnableOption "fonts";

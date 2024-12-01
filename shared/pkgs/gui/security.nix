@@ -1,9 +1,15 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 
 let
   cfg = config.shared.pkgs.gui.security;
-in {
+in
+{
   options.shared.pkgs.gui.security = {
     enable = mkEnableOption "Security GUI packages";
   };
@@ -11,9 +17,9 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       # Encryption Tools
-      stable.cryptomator            # Cloud storage encryption
-      veracrypt             # Disk encryption
-      picocrypt             # Simple file encryption
+      stable.cryptomator # Cloud storage encryption
+      veracrypt # Disk encryption
+      picocrypt # Simple file encryption
 
       # Certificate Management
       kdePackages.kleopatra # Certificate manager

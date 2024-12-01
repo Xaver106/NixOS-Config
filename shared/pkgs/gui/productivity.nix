@@ -1,9 +1,15 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 
 let
   cfg = config.shared.pkgs.gui.productivity;
-in {
+in
+{
   options.shared.pkgs.gui.productivity = {
     enable = mkEnableOption "Productivity packages";
   };
@@ -11,24 +17,24 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       # Office Suite + Spell Checking
-      libreoffice-qt           # Office suite
-      hunspell                 # Spell checking
-      hunspellDicts.de_DE     # German dictionary
-      hunspellDicts.en_US     # English dictionary
+      libreoffice-qt # Office suite
+      hunspell # Spell checking
+      hunspellDicts.de_DE # German dictionary
+      hunspellDicts.en_US # English dictionary
 
       # Calculators
-      geogebra6                # Math calculator
+      geogebra6 # Math calculator
       speedcrunch # A fast power user calculator
       kdePackages.kalgebra # 2D and 3D Graph Calculator
       kdePackages.kcalc # Calculator offering everything a scientific calculator does, and more
       qalculate-qt # Ultimate desktop calculator
 
       # Task Management
-      ticktick                # Todo/Task management
-      lunatask                # Task management
+      ticktick # Todo/Task management
+      lunatask # Task management
 
       # Reference Management
-      jabref                        # Reference manager for LaTeX TODO: good fit here?
+      jabref # Reference manager for LaTeX TODO: good fit here?
 
       # OCR
       ocrmypdf # Adds an OCR text layer to scanned PDF files, allowing them to be searched

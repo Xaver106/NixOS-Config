@@ -1,9 +1,15 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 
 let
   cfg = config.shared.pkgs.gui.programs.firefox;
-in {
+in
+{
   options.shared.pkgs.gui.programs.firefox = {
     enable = mkEnableOption "Firefox";
   };

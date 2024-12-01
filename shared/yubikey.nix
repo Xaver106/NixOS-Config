@@ -1,8 +1,15 @@
-{config, pkgs, lib, ...}:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 
-let cfg = config.shared.yubikey;
-in {
+let
+  cfg = config.shared.yubikey;
+in
+{
 
   options.shared.yubikey = {
     enable = mkEnableOption "yubikey support";
@@ -18,7 +25,7 @@ in {
     ];
 
     services.pcscd.enable = true; # Smartcard Deamon
-    
+
     services.udev.packages = [
       pkgs.yubikey-manager
       pkgs.yubikey-personalization

@@ -1,15 +1,22 @@
-{config, pkgs, lib, ...}:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 
-let cfg = config.shared.locale-defaults;
-in {
+let
+  cfg = config.shared.locale-defaults;
+in
+{
 
   options.shared.locale-defaults = {
     enable = mkEnableOption "localisation";
   };
 
   config = mkIf cfg.enable {
-    
+
     time.timeZone = "Europe/Berlin";
     i18n.defaultLocale = "en_US.UTF-8";
     i18n.extraLocaleSettings = {

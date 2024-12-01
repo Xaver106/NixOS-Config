@@ -7,13 +7,12 @@
     "nixedit" = "zellij -l nix";
   };
 
-
   catppuccin = {
     enable = true;
   };
 
   # === Kitty ===
-  
+
   programs.kitty = {
     enable = true;
     font.name = "IosevkaTerm Nerd Font";
@@ -22,9 +21,8 @@
     };
   };
 
-
   # === Fish Shell ===
-  
+
   programs.fish = {
     enable = true;
   };
@@ -35,7 +33,6 @@
     enable = true;
   };
 
-
   # === fzf ===
 
   programs.fzf = {
@@ -43,7 +40,7 @@
   };
 
   # === Helix Editor ===
-  
+
   programs.helix = {
     enable = true;
     defaultEditor = true;
@@ -58,19 +55,20 @@
         indent-guides.render = true;
       };
       keys.normal = {
-        esc = [ "collapse_selection" "keep_primary_selection" ];
+        esc = [
+          "collapse_selection"
+          "keep_primary_selection"
+        ];
       };
     };
   };
 
-
   # === Zoxide ===
-  
+
   programs.zoxide.enable = true;
 
-
   # === Zellij ===
-  
+
   programs.zellij = {
     enable = true;
   };
@@ -86,7 +84,6 @@
     enable = true;
   };
 
-
   # === Git ===
 
   programs.git = {
@@ -97,7 +94,6 @@
     signing.signByDefault = true;
   };
 
-
   # === EZA ===
 
   programs.eza = {
@@ -106,9 +102,8 @@
     extraOptions = [ "--group-directories-first" ];
   };
 
-
   # === Ranger ===
-  
+
   programs.ranger = {
     enable = true;
     plugins = [
@@ -136,7 +131,6 @@
     '';
   };
 
-
   # === Btop ===
 
   programs.btop = {
@@ -146,8 +140,7 @@
   # === Custom Files ===
 
   home.file."Taskfile.yml".source = ./resources/Taskfile.yml;
-  
-  
+
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new home Manager release introduces backwards

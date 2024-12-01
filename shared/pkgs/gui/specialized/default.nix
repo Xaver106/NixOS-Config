@@ -1,9 +1,15 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 
-let 
+let
   cfg = config.shared.pkgs.gui.specialized;
-in {
+in
+{
   imports = [
     ./printing.nix
     ./remarkable.nix

@@ -22,41 +22,53 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, catppuccin, ... }@inputs: let
-    inherit (self) outputs;
-  in rec {
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      nixos-hardware,
+      catppuccin,
+      ...
+    }@inputs:
+    let
+      inherit (self) outputs;
+    in
+    rec {
 
-    /*===== Overlays =====*/
-    overlays = import ./overlays {inherit inputs;};
+      # ===== Overlays =====
+      overlays = import ./overlays { inherit inputs; };
 
-    /******* Nixos Configurations *******/
-    nixosConfigurations = {
+      /**
+        ***** Nixos Configurations ******
+      */
+      nixosConfigurations = {
 
-      "Xavers-nixDesktop" = nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
+        "Xavers-nixDesktop" = nixpkgs.lib.nixosSystem rec {
+          system = "x86_64-linux";
 
-        # Pass all Inputs to the modules
-        specialArgs = {inherit inputs outputs;};
+          # Pass all Inputs to the modules
+          specialArgs = { inherit inputs outputs; };
 
-        modules = [
-          ./shared
-          ./hosts/Xavers-nixDesktop
-          ./users/xaver106
-        ];
-      };
+          modules = [
+            ./shared
+            ./hosts/Xavers-nixDesktop
+            ./users/xaver106
+          ];
+        };
 
-      "Xavers-Laptop" = nixpkgs.lib.nixosSystem  rec {
-        system = "x86_64-linux";
+        "Xavers-Laptop" = nixpkgs.lib.nixosSystem rec {
+          system = "x86_64-linux";
 
-        # Pass all Inputs to the modules
-        specialArgs = {inherit inputs outputs;};
+          # Pass all Inputs to the modules
+          specialArgs = { inherit inputs outputs; };
 
-        modules = [
-          ./shared
-          ./hosts/Xavers-Laptop
-          ./users/xaver106
-        ];
+          modules = [
+            ./shared
+            ./hosts/Xavers-Laptop
+            ./users/xaver106
+          ];
+        };
       };
     };
-  };
 }

@@ -1,22 +1,28 @@
-{config, pkgs, lib, ...}:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 
-let cfg = config.shared.zsa;
-in {
+let
+  cfg = config.shared.zsa;
+in
+{
 
   options.shared.zsa = {
     enable = mkEnableOption "";
   };
 
   config = mkIf cfg.enable {
-  
+
     environment.systemPackages = with pkgs; [
       keymapp # Application for ZSA keyboards
     ];
 
-    services.udev.packages = [ 
-      (pkgs.writeTextDir "etc/udev/rules.d/50-zsa.rules"
-        ''
+    services.udev.packages = [
+      (pkgs.writeTextDir "etc/udev/rules.d/50-zsa.rules" ''
         # Rules for Oryx web flashing and live training
         KERNEL=="hidraw*", ATTRS{idVendor}=="16c0", MODE="0664", GROUP="plugdev"
         KERNEL=="hidraw*", ATTRS{idVendor}=="3297", MODE="0664", GROUP="plugdev"
@@ -41,8 +47,7 @@ in {
         SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", MODE:="0666", SYMLINK+="stm32_dfu"
         # Keymapp Flashing rules for the Voyager
         SUBSYSTEMS=="usb", ATTRS{idVendor}=="3297", MODE:="0666", SYMLINK+="ignition_dfu"
-        ''
-      )
+      '')
     ];
 
   };
