@@ -1,8 +1,15 @@
-{config, pkgs, lib, ...}:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 
-let cfg = config.shared.plasma;
-in {
+let
+  cfg = config.shared.plasma;
+in
+{
 
   options.shared.plasma = {
     enable = mkEnableOption "KDE Plasma and SDDM";
@@ -27,8 +34,8 @@ in {
     programs.dconf.enable = true; # Correct KDE Theme on Wayland
 
     environment.systemPackages = with pkgs; [
-    wl-clipboard # Command-line copy/paste utilities for Wayland
-    xclip         # X11 clipboard
+      wl-clipboard # Command-line copy/paste utilities for Wayland
+      xclip # X11 clipboard
     ];
 
   };

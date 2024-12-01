@@ -1,8 +1,15 @@
-{config, pkgs, lib, ...}:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 
-let cfg = config.shared.specialisations.isolated;
-in {
+let
+  cfg = config.shared.specialisations.isolated;
+in
+{
 
   options.shared.specialisations.isolated = {
     enable = mkEnableOption "Isolated Specialisation";
@@ -13,7 +20,11 @@ in {
       fileSystems."/tmpfs" = {
         device = "none";
         fsType = "tmpfs";
-        options = [ "size=3G" "mode=777" "noswap"];
+        options = [
+          "size=3G"
+          "mode=777"
+          "noswap"
+        ];
       };
 
       shared = {
@@ -31,13 +42,13 @@ in {
 
       networking = {
         useDHCP = mkForce false;
-        interfaces = mkForce {};
+        interfaces = mkForce { };
         wireless.enable = mkForce false;
         networkmanager.enable = mkForce false;
       };
       systemd.network = {
         enable = mkForce false;
-        netdevs = mkForce {};
+        netdevs = mkForce { };
       };
     };
   };

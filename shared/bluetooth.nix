@@ -1,8 +1,15 @@
-{config, pkgs, lib, ...}:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 
-let cfg = config.shared.bluetooth;
-in {
+let
+  cfg = config.shared.bluetooth;
+in
+{
 
   options.shared.bluetooth = {
     enable = mkEnableOption "bluetooth";

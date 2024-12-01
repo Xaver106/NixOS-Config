@@ -1,9 +1,15 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 
 let
   cfg = config.shared.pkgs.dev;
-in {
+in
+{
   options.shared.pkgs.dev = {
     enable = mkEnableOption "Development packages";
   };
@@ -11,12 +17,12 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       # Version Control tools
-      lazygit          # Terminal UI for git
+      lazygit # Terminal UI for git
 
       # Build Tools
-      maven            # Java build tool
-      gradle           # Java build tool
-      go-task          # Task runner
+      maven # Java build tool
+      gradle # Java build tool
+      go-task # Task runner
 
       # Python
       python3
@@ -28,14 +34,14 @@ in {
       python312Packages.pyls-isort
 
       # Rust
-      cargo            # Rust package manager
-      rustup           # Rust toolchain manager
-      rust-analyzer    # Rust LSP
+      cargo # Rust package manager
+      rustup # Rust toolchain manager
+      rust-analyzer # Rust LSP
 
       # Go
-      go               # Go compiler
-      gopls            # Go LSP
-      delve            # Go debugger
+      go # Go compiler
+      gopls # Go LSP
+      delve # Go debugger
 
       # JavaScript/Node
       nodejs
@@ -53,10 +59,10 @@ in {
       lua-language-server
 
       # C/C++
-      gcc              # GNU Compiler Collection
-      clang            # LLVM Compiler
-      clang-tools      # Clang tools
-      lldb             # Debugger
+      gcc # GNU Compiler Collection
+      clang # LLVM Compiler
+      clang-tools # Clang tools
+      lldb # Debugger
 
       # Haskell
       haskell-language-server
@@ -65,13 +71,13 @@ in {
       swi-prolog
 
       # Nix
-      nil              # Nix LSP
+      nil # Nix LSP
       nixd
-      nixfmt-rfc-style           # Nix formatter
+      nixfmt-rfc-style # Nix formatter
 
       # Typst
-      typst            # Markup-based typesetting
-      typst-lsp        # Typst LSP
+      typst # Markup-based typesetting
+      typst-lsp # Typst LSP
     ];
 
     programs.java.enable = true;

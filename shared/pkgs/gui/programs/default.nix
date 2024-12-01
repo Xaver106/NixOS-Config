@@ -1,9 +1,15 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 
-let 
+let
   cfg = config.shared.pkgs.gui.programs;
-in {
+in
+{
   imports = [
     ./firefox.nix
     ./obs.nix

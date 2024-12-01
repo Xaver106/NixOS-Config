@@ -1,8 +1,15 @@
-{config, pkgs, lib, ...}:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 
-let cfg = config.shared.ai;
-in {
+let
+  cfg = config.shared.ai;
+in
+{
 
   options.shared.ai = {
     enable = mkEnableOption "AI models";

@@ -2,14 +2,18 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [
-      inputs.nixos-hardware.nixosModules.framework-11th-gen-intel
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    inputs.nixos-hardware.nixosModules.framework-11th-gen-intel
+    ./hardware-configuration.nix
+  ];
 
   networking.hostName = "Xavers-Laptop";
 
@@ -29,7 +33,6 @@
   '';
 
   shared.ai.enable = false;
-
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
