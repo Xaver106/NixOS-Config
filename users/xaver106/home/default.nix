@@ -85,7 +85,7 @@
     settings = {
       git.paging = {
         colorArg = "never";
-        pager = "ydiff -p cat -s --wrap --width={{columnWidth}}";
+        externalDiffCommand = "difft --color=always";
       };
     };
   };
@@ -96,6 +96,7 @@
     enable = true;
     userName = "Xaver106";
     userEmail = "xaver106@posteo.de";
+    difftastic.enable = true;
   };
 
   # === EZA ===
@@ -115,7 +116,7 @@
         name = "ranger_devicons";
         src = builtins.fetchGit {
           url = "https://github.com/alexanderjeurissen/ranger_devicons.git";
-          rev = "a8d626485ca83719e1d8d5e32289cd96a097c861";
+          rev = "84db73d0a50a8c6085b3ec63f834c781b603e83e";
         };
       }
       {
