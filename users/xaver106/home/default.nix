@@ -82,6 +82,12 @@
 
   programs.lazygit = {
     enable = true;
+    settings = {
+      git.paging = {
+        colorArg = "never";
+        pager = "ydiff -p cat -s --wrap --width={{columnWidth}}";
+      };
+    };
   };
 
   # === Git ===
@@ -89,9 +95,7 @@
   programs.git = {
     enable = true;
     userName = "Xaver106";
-    userEmail = "xaver10610@gmail.com";
-    signing.key = "B1A415AB920AFDA2";
-    signing.signByDefault = true;
+    userEmail = "xaver106@posteo.de";
   };
 
   # === EZA ===
