@@ -9,6 +9,7 @@
   imports =
     [
       inputs.catppuccin.nixosModules.catppuccin
+      ./AI.nix
       ./audio.nix
       ./bluetooth.nix
       ./documentation.nix
@@ -25,6 +26,7 @@
     ];
 
   shared = with lib; {
+    ai.enable = mkDefault true;
     audio.enable = mkDefault true;
     bluetooth.enable = mkDefault true;
     documentation.enable = mkDefault true;
