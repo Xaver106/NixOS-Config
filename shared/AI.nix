@@ -23,5 +23,7 @@ in
       acceleration = "cuda";
     };
 
+    services.open-webui.enable = true;
+
   };
 }
