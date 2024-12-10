@@ -33,7 +33,7 @@
   ];
 
   shared = with lib; {
-    ai.enable = mkDefault true;
+    ai.enable = mkDefault false;
     audio.enable = mkDefault true;
     bluetooth.enable = mkDefault true;
     documentation.enable = mkDefault true;
