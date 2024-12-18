@@ -24,6 +24,7 @@
       "adbusers"
       "boinc"
       "plugdev"
+      "wireshark"
     ];
     /*
       networkmanager: Allow user to use networkmanager to manage network connections

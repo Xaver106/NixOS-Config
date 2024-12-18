@@ -60,6 +60,7 @@
   users.defaultUserShell = pkgs.fish; # Set default shell to fish
 
   programs = {
+    wireshark.enable = true;
     fish.enable = true; # Fish Shell
     kdeconnect.enable = true; # KDE Connect
     ausweisapp = {
