@@ -16,10 +16,6 @@ in
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      # Version Control tools
-      lazygit # Terminal UI for git
-      difftastic # Syntax-aware diff
-      ydiff # View colored, incremental diff in workspace or from stdin with side by side and auto pager support
 
       # Build Tools
       maven # Java build tool
@@ -80,6 +76,9 @@ in
       # Typst
       typst # Markup-based typesetting
       typst-lsp # Typst LSP
+
+      # Formatter
+      treefmt2 # one CLI to format the code tree
     ];
 
     programs.java.enable = true;

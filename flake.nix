@@ -14,6 +14,11 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Sops Nix
+    sops-nix.url = "github:Mic92/sops-nix";
+    # optional, not necessary for the module
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
     # Catppuccin
     catppuccin.url = "github:catppuccin/nix";
 

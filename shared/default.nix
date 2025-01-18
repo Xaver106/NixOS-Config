@@ -55,7 +55,7 @@
     outputs.overlays.stable-packages
   ];
 
-  console.catppuccin.enable = true;
+  catppuccin.tty.enable = true;
 
   users.defaultUserShell = pkgs.fish; # Set default shell to fish
 

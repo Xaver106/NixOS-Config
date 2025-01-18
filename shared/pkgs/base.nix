@@ -29,18 +29,20 @@ in
       # Text Editors
       helix # Modern modal editor
 
+      # Task Runners
+      go-task # Task runner
+
       # Version Control
       git # Version control system
+      lazygit # Terminal UI for git
+      difftastic # Syntax-aware diff
 
       # Shell Utilities
-      chezmoi # Dotfile manager
       killall # Process killer
-      thefuck # Command correction
       fzf # Fuzzy finder
       pandoc # Document converter
 
       # Terminal Multiplexers
-      tmux # Terminal multiplexer
       zellij # Modern terminal multiplexer
 
       # System Monitoring
