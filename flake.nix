@@ -31,9 +31,6 @@
     {
       self,
       nixpkgs,
-      home-manager,
-      nixos-hardware,
-      catppuccin,
       ...
     }@inputs:
     let
@@ -56,7 +53,6 @@
           specialArgs = { inherit inputs outputs; };
 
           modules = [
-            ./shared
             ./hosts/Xavers-nixDesktop
             ./users/xaver106
           ];
@@ -69,7 +65,6 @@
           specialArgs = { inherit inputs outputs; };
 
           modules = [
-            ./shared
             ./hosts/Xavers-Laptop
             ./users/xaver106
           ];
