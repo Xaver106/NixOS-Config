@@ -98,6 +98,10 @@
     enable = true;
     userName = "Xaver106";
     userEmail = "xaver106@posteo.de";
+    signing = {
+      key = "C6FA3738B20EAC2D7CCF68DA545F10AE238F7DBD";
+      signByDefault = true;
+    };
     difftastic.enable = true;
   };
 
