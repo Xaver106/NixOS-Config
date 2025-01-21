@@ -62,7 +62,7 @@ in
       # Network Tools
       wget # File download
       dig # DNS lookup
-      speedtest-cli # Internet speed test
+      cfspeedtest # Internet speed test
     ];
   };
 }

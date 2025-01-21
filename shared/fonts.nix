@@ -25,6 +25,12 @@ in
         nerd-fonts.iosevka
         nerd-fonts.iosevka-term
         nerd-fonts.hack
+
+        # other random Fonts I neeed at some point
+        font-awesome
+        roboto
+        source-sans
+        source-sans-pro
       ];
     };
   };
