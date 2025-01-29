@@ -79,6 +79,9 @@ in
 
       # Formatter
       treefmt2 # one CLI to format the code tree
+
+      # TOML
+      taplo # TOML toolkit
     ];
 
     programs.java.enable = true;

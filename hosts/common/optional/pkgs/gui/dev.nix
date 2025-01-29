@@ -26,6 +26,9 @@ in
 
       # Version Control
       gittyup # Git GUI client
+
+      # SQLite Browser
+      sqlitebrowser
     ];
   };
 }
