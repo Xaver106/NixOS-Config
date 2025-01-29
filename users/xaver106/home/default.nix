@@ -11,8 +11,6 @@
     enable = true;
   };
 
-  programs.ssh.forwardAgent = true;
-
   # === Kitty ===
 
   programs.kitty = {
