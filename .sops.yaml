@@ -1,0 +1,22 @@
+keys:
+  # Users
+  - &xaver106 C6FA3738B20EAC2D7CCF68DA545F10AE238F7DBD
+
+  # Hosts
+  - &host_Desktop age1maxrm72j3zu6t5ra4yx2dz7najsq4c0y9dxlenpxy7xcejsp2p7svrw39v
+
+creation_rules:
+
+  - path_regex: users/xaver106/secrets.ya?ml$
+    key_groups:
+      - pgp:
+        - *xaver106
+        age:
+        - *host_Desktop
+
+  - path_regex: hosts/common/secrets.ya?ml$
+    key_groups:
+      - pgp:
+        - *xaver106
+        age:
+        - *host_Desktop
