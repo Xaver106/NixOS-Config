@@ -75,7 +75,7 @@ in
 
       # Typst
       typst # Markup-based typesetting
-      typst-lsp # Typst LSP
+      tinymist # Typst LSP
 
       # Formatter
       treefmt2 # one CLI to format the code tree
