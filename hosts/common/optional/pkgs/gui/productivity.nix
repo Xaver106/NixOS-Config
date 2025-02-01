@@ -41,6 +41,7 @@ in
 
       # OCR
       ocrmypdf # Adds an OCR text layer to scanned PDF files, allowing them to be searched
+      tesseract # OCR engine
 
       # Markdown Editor
       typora
