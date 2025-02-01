@@ -27,25 +27,25 @@ in
     dnscrypt-module = {
       enable = true;
       serverNames = [
-        "cloudflare-security"
         "cloudflare-security-ipv6"
+        "cloudflare-security"
       ];
       forwardingRules = [
         {
           domain = "local";
-          servers = [ "192.168.10.1" ];
+          servers = [ "192.168.10.1" "$DHCP" ];
         }
         {
           domain = "fritz.box";
-          servers = [ "192.168.10.1" ];
+          servers = [ "192.168.10.1" "$DHCP" ];
         }
         {
           domain = "login.wifionice.de";
-          servers = [ "172.18.0.1" ];
+          servers = [ "$DHCP" ];
         }
         {
           domain = "iceportal.de";
-          servers = [ "172.18.0.1" ];
+          servers = [ "$DHCP" ];
         }
       ];
     };
