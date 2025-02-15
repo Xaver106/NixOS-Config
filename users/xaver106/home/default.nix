@@ -71,6 +71,9 @@
 
   programs.zellij = {
     enable = true;
+    enableZshIntegration = false;
+    enableFishIntegration = false;
+    enableBashIntegration = false;
   };
 
   xdg.configFile."zellij/layouts" = {
