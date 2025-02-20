@@ -32,9 +32,9 @@ in
       python312Packages.pyls-isort
 
       # Rust
-      cargo # Rust package manager
-      rustup # Rust toolchain manager
-      rust-analyzer # Rust LSP
+      # cargo # Rust package manager
+      # rustup # Rust toolchain manager
+      # rust-analyzer # Rust LSP
 
       # Go
       go # Go compiler
@@ -42,31 +42,21 @@ in
       delve # Go debugger
 
       # JavaScript/Node
-      nodejs
-      bun              # JS runtime/bundler
-      nodePackages_latest.typescript
-      nodePackages_latest.typescript-language-server
-      nodePackages_latest.vscode-json-languageserver
+      # nodejs
+      # bun              # JS runtime/bundler
+      # nodePackages_latest.typescript
+      # nodePackages_latest.typescript-language-server
+      # nodePackages_latest.vscode-json-languageserver
 
       # Java
       # jdk Installed trough programs.java
       jdt-language-server
 
-      # Lua
-      lua
-      lua-language-server
-
       # C/C++
-      gcc # GNU Compiler Collection
-      clang # LLVM Compiler
-      clang-tools # Clang tools
-      lldb # Debugger
-
-      # Haskell
-      haskell-language-server
-
-      # Prolog
-      swi-prolog
+      # gcc # GNU Compiler Collection
+      # clang # LLVM Compiler
+      # clang-tools # Clang tools
+      # lldb # Debugger
 
       # Nix
       nil # Nix LSP
