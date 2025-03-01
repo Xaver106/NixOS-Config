@@ -22,7 +22,7 @@ in
       jetbrains-toolbox # JetBrains IDE manager (IntelliJ, PyCharm, etc.)
 
       # Text Editors
-      kate # KDE Advanced Text Editor
+      kdePackages.kate # KDE Advanced Text Editor
 
       # Version Control
       gittyup # Git GUI client
