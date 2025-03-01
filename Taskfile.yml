@@ -24,6 +24,8 @@ tasks:
   flake-check:
     aliases: [ check fc]
     desc: Check if the flake can compile
+    cmds:
+      - nix flake check
 
   rebuild-*:
     desc: Custom Rebuild
