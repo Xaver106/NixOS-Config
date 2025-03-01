@@ -17,8 +17,6 @@ in
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       prismlauncher # Minecraft launcher
-      steam-tui # Terminal UI for Steam
-      sssnake # Terminal snake game
     ];
 
     programs = {
