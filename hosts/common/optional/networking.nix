@@ -33,11 +33,11 @@ in
       forwardingRules = [
         {
           domain = "local";
-          servers = [ "192.168.10.1" "$DHCP" ];
+          servers = [ "192.168.10.1" ];
         }
         {
           domain = "fritz.box";
-          servers = [ "192.168.10.1" "$DHCP" ];
+          servers = [ "192.168.10.1" ];
         }
         {
           domain = "login.wifionice.de";
