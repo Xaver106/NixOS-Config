@@ -30,7 +30,7 @@ in
       kalker # Command line calculator with math functions
 
       # Scientific Computing
-      octave # Scientific Programming Language (MATLAB alternative)
+      # octave # Scientific Programming Language (MATLAB alternative)
     ];
   };
 }

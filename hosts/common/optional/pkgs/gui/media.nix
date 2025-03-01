@@ -21,8 +21,8 @@ in
 
       # Audio
       spotify # Music streaming
-      goodvibes # Internet radio player
-      audacity # Audio editor
+      # goodvibes # Internet radio player
+      # audacity # Audio editor
 
       # Graphics/Images
       inkscape # Vector graphics editor
