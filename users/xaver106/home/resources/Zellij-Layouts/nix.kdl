@@ -1,6 +1,4 @@
 layout {
-	cwd "~/nixos-config"
-
 	default_tab_template {
         // the default zellij tab-bar and status bar plugins
         pane size=1 borderless=true {
@@ -16,7 +14,7 @@ layout {
 	
 	tab name="Editor" focus=true {
 		pane command="hx" name="Helix"{
-			args "flake.nix"
+			args "./"
 		}
  	}
 
