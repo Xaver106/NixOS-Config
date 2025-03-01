@@ -29,7 +29,7 @@ in
     calculators.enable = mkDefault cfg.enable;
     dev.enable = mkDefault cfg.enable;
     gui.enable = mkDefault cfg.enable;
-    latex.enable = mkDefault cfg.enable;
+    latex.enable = mkDefault false;
     security.enable = mkDefault cfg.enable;
   };
 

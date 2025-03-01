@@ -20,7 +20,6 @@ in
       # Build Tools
       maven # Java build tool
       gradle # Java build tool
-      go-task # Task runner
 
       # Python
       python3

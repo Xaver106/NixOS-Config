@@ -30,11 +30,10 @@ in
       qalculate-qt # Ultimate desktop calculator
 
       # Task Management
-      ticktick # Todo/Task management
       lunatask # Task management
 
       # Reference Management
-      jabref # Reference manager for LaTeX TODO: good fit here?
+      # jabref # Reference manager for LaTeX TODO: good fit here?
       
       # PDF Readers
       sioyek
