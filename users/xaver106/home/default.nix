@@ -2,10 +2,14 @@
 
 {
   # === General ===
-
-  home.shellAliases = {
-    "nixedit" = "zellij -l nix";
-  };
+  #
+  #
+  home.packages = [
+    (pkgs.writeShellScriptBin "nixedit" ''
+      cd ~/nixos-config
+      zellij -l nix
+    '')
+  ];
 
   catppuccin = {
     enable = true;

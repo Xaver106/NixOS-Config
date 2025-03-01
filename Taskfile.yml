@@ -21,6 +21,17 @@ tasks:
       - sudo nixos-rebuild boot
       - task: commit-after-rebuilt
 
+  flake-check:
+    aliases: [ check fc]
+    desc: Check if the flake can compile
+
+  rebuild-*:
+    desc: Custom Rebuild
+    vars:
+      ARG: '{{index .MATCH 0}}'
+    cmds:
+      - sudo nixos-rebuild {{.ARG}}
+
   garbage-collect:
     aliases: [gc]
     desc: Run nix Garbage collector
@@ -28,8 +39,8 @@ tasks:
       - sudo nix-collect-garbage -d
       - sudo /run/current-system/bin/switch-to-configuration boot
 
-  cleanup-branches:
-    aliases: [cb]
+  branches-gc:
+    aliases: [b-gc]
     desc: Cleanup old rebuid branches
     cmds:
       - ./scripts/cleanup.sh {{.CLI_ARGS}}
