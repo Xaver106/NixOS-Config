@@ -15,21 +15,22 @@ in
   };
 
   config = mkIf cfg.enable {
+
+    environment.systemPackages = with pkgs; [
+      firefox
+      librewolf
+    ];
+    
     # Additional configuration
     programs.firefox = {
       enable = true;
       preferences = {
-        "widget.use-xdg-desktop-portal.file-picker" = 1;
+        "widget.use-xdg-desktop-portal.file-picker" = 1; # force KDE Filepicker
       };
       wrapperConfig = {
         pipewireSupport = true;
       };
     };
 
-    # Make Firefox use the KDE file picker.
-    # Preferences source: https://wiki.archlinux.org/title/firefox#KDE_integration
-    environment.sessionVariables = {
-      MOZ_ENABLE_WAYLAND = "1";
-    };
   };
 }

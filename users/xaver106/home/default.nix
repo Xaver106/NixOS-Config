@@ -2,8 +2,7 @@
 
 {
   # === General ===
-  #
-  #
+  
   home.packages = [
     (pkgs.writeShellScriptBin "nixedit" ''
       cd ~/nixos-config
