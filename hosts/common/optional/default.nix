@@ -18,6 +18,7 @@ with lib;
     ./networking.nix
     ./plasma.nix
     ./printing.nix
+    ./virtualisation.nix
     ./yubikey.nix
     ./zsa.nix
 
@@ -36,6 +37,7 @@ with lib;
     networking.enable = mkDefault true;
     plasma.enable = mkDefault true;
     printing.enable = mkDefault true;
+    virtualisation.enable = mkDefault true;
     yubikey.enable = mkDefault true;
     zsa.enable = mkDefault true;
   };

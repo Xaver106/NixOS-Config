@@ -24,12 +24,14 @@
       "adbusers"
       "boinc"
       "plugdev"
+      "libvirtd"
     ];
     /*
       networkmanager: Allow user to use networkmanager to manage network connections
       wheel: Allow user to use sudo
       adbusers: Allow user to use adb (android debug bridge) (enabled with programs.adb.enable)
       boinc: Allow user to use boinc/connect to client (enabled with services.boinc.enable)
+      libvirtd: Virtualisation Authentication access
     */
   };
 
