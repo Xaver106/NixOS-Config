@@ -27,5 +27,16 @@ in
 
     programs._1password-gui.enable = true;
 
+    # Manually add Librewolf to the supported browsers for 1Password
+    environment.etc = {
+      "1password/custom_allowed_browsers" = {
+        text = ''
+          librewolf
+        '';
+        mode = "0755";
+      };
+    };
+
+
   };
 }
