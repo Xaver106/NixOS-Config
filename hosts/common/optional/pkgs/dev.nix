@@ -67,7 +67,7 @@ in
       tinymist # Typst LSP
 
       # Formatter
-      treefmt2 # one CLI to format the code tree
+      treefmt # one CLI to format the code tree
 
       # TOML
       taplo # TOML toolkit
