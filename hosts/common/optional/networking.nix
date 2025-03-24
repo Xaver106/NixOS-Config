@@ -41,11 +41,11 @@ in
         }
         {
           domain = "login.wifionice.de";
-          servers = [ "$DHCP" ];
+          servers = [ "172.18.0.1" ];
         }
         {
           domain = "iceportal.de";
-          servers = [ "$DHCP" ];
+          servers = [ "172.18.0.1" ];
         }
       ];
     };
