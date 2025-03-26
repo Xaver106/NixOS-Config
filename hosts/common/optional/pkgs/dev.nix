@@ -41,11 +41,11 @@ in
       delve # Go debugger
 
       # JavaScript/Node
-      # nodejs
-      # bun              # JS runtime/bundler
-      # nodePackages_latest.typescript
-      # nodePackages_latest.typescript-language-server
-      # nodePackages_latest.vscode-json-languageserver
+      nodejs
+      bun              # JS runtime/bundler
+      nodePackages_latest.typescript
+      nodePackages_latest.typescript-language-server
+      nodePackages_latest.vscode-json-languageserver
 
       # Java
       # jdk Installed trough programs.java
