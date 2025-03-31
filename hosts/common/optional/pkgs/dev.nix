@@ -66,6 +66,12 @@ in
       typst # Markup-based typesetting
       tinymist # Typst LSP
 
+      # Yaml
+      yaml-language-server # Language Server for YAML Files
+
+      # Markdown
+      marksman # Language Server for Markdown
+
       # Formatter
       treefmt # one CLI to format the code tree
 
