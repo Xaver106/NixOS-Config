@@ -72,12 +72,12 @@
 
   # === Zellij ===
 
-  programs.zellij = {
-    enable = true;
-    enableZshIntegration = false;
-    enableFishIntegration = false;
-    enableBashIntegration = false;
-  };
+  # programs.zellij = {
+  #   enable = true;
+  #   enableZshIntegration = false;
+  #   enableFishIntegration = false;
+  #   enableBashIntegration = false;
+  # };
 
   xdg.configFile."zellij/layouts" = {
     source = ./resources/Zellij-Layouts;
