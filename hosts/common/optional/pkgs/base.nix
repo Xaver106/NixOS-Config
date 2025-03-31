@@ -25,6 +25,7 @@ in
 
       # File Managers
       ranger # Vim-like file manager
+      lf # Terminal file manager written in Go and heavily inspired by ranger
 
       # Text Editors
       helix # Modern modal editor
