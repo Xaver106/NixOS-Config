@@ -11,14 +11,14 @@ tasks:
     aliases: [rb-s]
     desc: Rebuild NixOS and switch immediatly
     cmds:
-      - sudo nixos-rebuild switch
+      - sudo systemd-inhibit nixos-rebuild switch
       - task: commit-after-rebuilt
 
   rebuild-boot:
     aliases: [rb-b]
     desc: Rebuild NixOS and enable on next reboot 
     cmds:
-      - sudo nixos-rebuild boot
+      - sudo systemd-inhibit nixos-rebuild boot
       - task: commit-after-rebuilt
 
   flake-check:
