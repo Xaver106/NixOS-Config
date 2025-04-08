@@ -19,19 +19,22 @@
     isNormalUser = true;
     description = "Xaver106";
     extraGroups = [
-      "networkmanager"
-      "wheel"
       "adbusers"
       "boinc"
-      "plugdev"
+      "docker"
       "libvirtd"
+      "networkmanager"
+      "plugdev"
+      "wheel"
     ];
     /*
-      networkmanager: Allow user to use networkmanager to manage network connections
-      wheel: Allow user to use sudo
-      adbusers: Allow user to use adb (android debug bridge) (enabled with programs.adb.enable)
-      boinc: Allow user to use boinc/connect to client (enabled with services.boinc.enable)
+      adbusers: Allow user to use adb (android debug bridge)
+      boinc: Allow user to use boinc/connect to client
+      docker: Allows usage of Docker NOTE: This is basically root perissions. Cosider using rootless docker
       libvirtd: Virtualisation Authentication access
+      networkmanager: Allow user to use networkmanager to manage network connections
+      plugdev: Gives access to mount sme devices NOTE: Needed to interact with YubiKeys
+      wheel: Allow user to use sudo
     */
   };
 

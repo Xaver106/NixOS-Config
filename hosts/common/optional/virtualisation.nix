@@ -23,6 +23,8 @@ in {
     # if you use libvirtd on a desktop environment
     programs.virt-manager.enable = true; # can be used to manage non-local hosts as well
 
+    # Docker, hope I don't need to explain
+    virtualisation.docker.enable = true;
 
   };
 }
