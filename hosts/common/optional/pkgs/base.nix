@@ -59,6 +59,8 @@ in
       # File System
       fdupes # Find duplicate files
       ntfs3g # NTFS support
+      exfat # EXFAT Support
+      exfatprogs
 
       # Network Tools
       wget # File download

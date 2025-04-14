@@ -20,6 +20,7 @@ in
       signal-desktop # Secure messenger
       teamspeak_client # Voice chat
       element-desktop # Matrix client
+      zapzap # WhatsApp client
 
       # Discord
       (pkgs.master.discord.override {
