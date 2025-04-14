@@ -21,7 +21,7 @@ in
 
   config.common.optional.pkgs.gui.programs = {
     firefox.enable = mkDefault cfg.enable;
-    obs.enable = mkDefault false;
+    obs.enable = mkDefault cfg.enable;
   };
 
 }
