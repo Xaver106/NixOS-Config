@@ -21,6 +21,7 @@ in
 
       # Disk Management
       gparted # Partition manager
+      kdePackages.partitionmanager
       kdePackages.filelight # Disk usage analyzer
       kdiskmark # Disk benchmarking tool
 
