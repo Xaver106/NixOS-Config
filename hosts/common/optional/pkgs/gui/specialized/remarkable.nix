@@ -12,7 +12,7 @@ in
 {
 
   options.common.optional.pkgs.gui.specialized.remarkable = {
-    enable = mkEnableOption "obs";
+    enable = mkEnableOption "ReMarkable Software";
   };
 
   config = mkIf cfg.enable {
