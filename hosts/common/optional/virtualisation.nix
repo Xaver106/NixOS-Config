@@ -16,7 +16,11 @@ in {
     ];
 
     virtualisation = {
-      libvirtd.enable = true;
+      libvirtd = {
+        enable = true;
+        qemu.swtpm.enable = true; # Alow TPM Emulation
+      };
+      # Android Virtualisation
       waydroid.enable = true;
     };
 
