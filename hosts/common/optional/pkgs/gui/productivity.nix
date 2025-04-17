@@ -22,6 +22,8 @@ in
       hunspellDicts.de_DE # German dictionary
       hunspellDicts.en_US # English dictionary
 
+      kdePackages.merkuro # Merkuro is a application suite designed to make handling your emails, calendars, contacts, and tasks simple.
+
       # Calculators
       geogebra6 # Math calculator
       speedcrunch # A fast power user calculator
