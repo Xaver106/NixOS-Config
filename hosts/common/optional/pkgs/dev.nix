@@ -83,5 +83,9 @@ in
       enable = true;
       package = pkgs.jdk23;
     };
+
+    # Per directory Development Environment
+    programs.direnv.enable = true;
+    
   };
 }
