@@ -33,4 +33,6 @@
     HibernateDelaySec=1h
   '';
 
+  common.optional.pkgs.gui.gaming = false;
+
 }
