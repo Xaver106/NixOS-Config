@@ -45,6 +45,7 @@
         "flakes"
       ]; # Enable Flakes and the nix Command
     };
+    trusted-users = [ "@wheel" ];
     #Add the system flake locatet at /etc/nixos to the registry as "system"
     registry."system" = {
       from = {
