@@ -25,7 +25,7 @@ in
       pulse.enable = true;
     };
 
-    environment.systemPackages = [
+    environment.systemPackages = mkIf config.switches.gui [
       pkgs.helvum
     ];
 

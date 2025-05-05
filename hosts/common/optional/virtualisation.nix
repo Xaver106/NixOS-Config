@@ -1,15 +1,22 @@
-{config, pkgs, lib, ...}:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 with lib;
 
-let cfg = config.common.optional.virtualisation;
-in {
+let
+  cfg = config.common.optional.virtualisation;
+in
+{
 
   options.common.optional.virtualisation = {
     enable = mkEnableOption "Virtualisation";
   };
 
   config = mkIf cfg.enable {
-    
+
     environment.systemPackages = with pkgs; [
       qemu
       quickemu
@@ -26,9 +33,6 @@ in {
 
     # if you use libvirtd on a desktop environment
     programs.virt-manager.enable = true; # can be used to manage non-local hosts as well
-
-    # Docker, hope I don't need to explain
-    virtualisation.docker.enable = true;
 
   };
 }

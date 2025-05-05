@@ -7,11 +7,11 @@
 with lib;
 
 let
-  cfg = config.common.optional.pkgs.gui.specialized.printing;
+  cfg = config.common.optional.pkgs.gui.dddprinting;
 in
 {
 
-  options.common.optional.pkgs.gui.specialized.printing = {
+  options.common.optional.pkgs.gui.dddprinting = {
     enable = mkEnableOption "3D Printing tools";
   };
 

@@ -78,11 +78,13 @@
     extra-substituters = [
       # nix community's cache server
       "https://nix-community.cachix.org"
+      "https://catppuccin.cachix.org"
     ];
 
     extra-trusted-public-keys = [
       # nix community's cache server public key
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "catppuccin.cachix.org-1:noG/4HkbhJb+lUAdKrph6LaozJvAeEEZj4N732IysmU="
     ];
   };
 }

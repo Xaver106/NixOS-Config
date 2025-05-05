@@ -18,7 +18,6 @@ in
     enable = mkEnableOption "All packages";
   };
 
-
   config.common.optional.specialisations = {
     isolated.enable = mkDefault cfg.enable;
   };
