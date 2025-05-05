@@ -31,7 +31,10 @@ in
 
     services.desktopManager.plasma6.enable = true; # Enable KDE Plasma 6
 
-    programs.dconf.enable = true; # Correct KDE Theme on Wayland
+    programs = {
+      dconf.enable = mkDefault true; # Correct KDE Theme on Wayland
+      kdeconnect.enable = mkDefault true; # KDE Connect
+    };
 
     environment.systemPackages = with pkgs; [
       wl-clipboard # Command-line copy/paste utilities for Wayland

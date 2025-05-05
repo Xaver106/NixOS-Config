@@ -20,7 +20,7 @@ in
       firefox
       librewolf
     ];
-    
+
     # Additional configuration
     programs.firefox = {
       enable = true;

@@ -25,5 +25,5 @@
     variant = "";
   };
   console.keyMap = "de"; # Configure console keymap
-  
+
 }

@@ -14,6 +14,7 @@
     ./documentation.nix
     ./locale-defaults.nix
     ./sops.nix
+    ./pkgs.nix
   ];
 
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
@@ -44,8 +45,8 @@
         "nix-command"
         "flakes"
       ]; # Enable Flakes and the nix Command
+      trusted-users = [ "@wheel" ];
     };
-    trusted-users = [ "@wheel" ];
     #Add the system flake locatet at /etc/nixos to the registry as "system"
     registry."system" = {
       from = {

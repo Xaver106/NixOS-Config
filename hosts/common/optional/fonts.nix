@@ -26,7 +26,7 @@ in
         nerd-fonts.iosevka-term
         nerd-fonts.hack
 
-        # other random Fonts I neeed at some point
+        # other random Fonts I neeed/needed at some point
         font-awesome
         roboto
         source-sans

@@ -17,6 +17,7 @@
   ];
 
   networking.hostName = "Xavers-Laptop";
+  setup.workstationDefaults = true;
 
   boot.initrd.systemd.enable = true;
 
@@ -33,6 +34,9 @@
     HibernateDelaySec=1h
   '';
 
-  common.optional.pkgs.gui.gaming = false;
+  common.optional = {
+    specialisations.enable = true;
+    pkgs.gui.gaming.enable = false;
+  };
 
 }

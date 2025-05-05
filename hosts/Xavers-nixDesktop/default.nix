@@ -19,6 +19,7 @@
   ];
 
   networking.hostName = "Xavers-nixDesktop";
+  setup.workstationDefaults = true;
 
   boot.initrd.systemd.enable = true;
 
@@ -29,7 +30,5 @@
   time.hardwareClockInLocalTime = true; # Fix windows showing wrong time
 
   programs.streamcontroller.enable = true;
-
-  services.boinc.enable = true; # BOINC Client and Manager (Distributet computing service)
 
 }

@@ -7,11 +7,11 @@
 with lib;
 
 let
-  cfg = config.common.optional.pkgs.gui.specialized.remarkable;
+  cfg = config.common.optional.pkgs.gui.remarkable;
 in
 {
 
-  options.common.optional.pkgs.gui.specialized.remarkable = {
+  options.common.optional.pkgs.gui.remarkable = {
     enable = mkEnableOption "ReMarkable Software";
   };
 

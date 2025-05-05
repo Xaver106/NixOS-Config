@@ -28,10 +28,9 @@ in
       # Desktop Integration
       desktop-file-utils # Command line utilities for desktop entries
 
-      # TODO: move
-      # KDE Tools 
       kdePackages.kcharselect # Tool to select and copy special characters from all installed fonts
-      bottles
+
+      bottles # Easy-to-use wineprefix manager
     ];
   };
 }

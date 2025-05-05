@@ -1,17 +1,5 @@
 {
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-with lib;
-
-let
-  cfg = config.common.optional.pkgs;
-in
-{
   imports = [
-    ./base.nix
     ./calculators.nix
     ./dev.nix
     ./latex.nix
@@ -19,18 +7,4 @@ in
 
     ./gui
   ];
-
-  options.common.optional.pkgs = {
-    enable = mkEnableOption "All packages";
-  };
-
-  config.common.optional.pkgs = {
-    base.enable = mkDefault cfg.enable;
-    calculators.enable = mkDefault cfg.enable;
-    dev.enable = mkDefault cfg.enable;
-    gui.enable = mkDefault cfg.enable;
-    latex.enable = mkDefault false;
-    security.enable = mkDefault cfg.enable;
-  };
-
 }

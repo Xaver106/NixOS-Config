@@ -34,12 +34,9 @@ in
       # Task Management
       lunatask # Task management
 
-      # Reference Management
-      # jabref # Reference manager for LaTeX TODO: good fit here?
-      
       # finance Tracking
       mmex # Easy-to-use personal finance software
-      
+
       # PDF Readers
       sioyek
 
