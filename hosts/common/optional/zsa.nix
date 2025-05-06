@@ -17,12 +17,9 @@ in
 
   config = mkIf cfg.enable {
 
-    environment.systemPackages = mkIf config.switches.gui (
-      with pkgs;
-      [
-        keymapp # Application for ZSA keyboards
-      ]
-    );
+    environment.systemPackages = with pkgs; [
+      keymapp # Application for ZSA keyboards
+    ];
 
     services.udev.packages = [
       (pkgs.writeTextDir "etc/udev/rules.d/50-zsa.rules" ''

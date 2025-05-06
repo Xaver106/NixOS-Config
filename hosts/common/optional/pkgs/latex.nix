@@ -26,7 +26,6 @@ in
       # Development Tools
       texlab # LaTeX LSP
       bibtex-tidy # BibTeX formatter
-    ] ++ optionals config.switches.gui [
       jabref # Reference manager for LaTeX
     ];
   };
