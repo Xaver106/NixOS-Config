@@ -17,16 +17,12 @@ in
 
   config = mkIf cfg.enable {
 
-    environment.systemPackages =
-      with pkgs;
-      [
-        yubikey-manager # Yubikey Manager CLI
-        opensc # Set of libraries and utilities to access smart cards
-      ]
-      ++ optionals config.switches.gui [
-        yubioath-flutter # Yubikey Authenticator DEPEND: pcscd
-        gnome-screenshot # Scan QR code for Yubikey Authenticator
-      ];
+    environment.systemPackages = with pkgs; [
+      yubikey-manager # Yubikey Manager CLI
+      opensc # Set of libraries and utilities to access smart cards
+      yubioath-flutter # Yubikey Authenticator DEPEND: pcscd
+      gnome-screenshot # Scan QR code for Yubikey Authenticator
+    ];
 
     services.pcscd.enable = true; # Smartcard Deamon
 
