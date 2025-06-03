@@ -20,6 +20,7 @@ in
     environment.systemPackages = with pkgs; [
       prusa-slicer # 3D Printer Slicer
       freecad-wayland # General purpose Open Source 3D CAD/MCAD/CAx/CAE/PLM modeler
+      blender # 3D Creation/Animation/Publishing System
     ];
 
   };
