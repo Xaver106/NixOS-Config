@@ -25,8 +25,9 @@ in
       pulse.enable = true;
     };
 
-    environment.systemPackages = [
-      pkgs.helvum
+    environment.systemPackages = with pkgs; [
+      helvum
+      qpwgraph
     ];
 
   };

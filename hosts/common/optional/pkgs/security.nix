@@ -19,6 +19,9 @@ in
       # Encryption Tools
       veracrypt # Disk encryption
 
+      # LUKS
+      cryptsetup
+
       # Certificate Management
       gnupg # GNU Privacy Guard
       gpgme # GnuPG Made Easy

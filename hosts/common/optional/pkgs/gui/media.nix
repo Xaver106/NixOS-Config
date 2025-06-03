@@ -18,6 +18,7 @@ in
     environment.systemPackages = with pkgs; [
       # Video
       mpv # Modern media player
+      vlc # Cross-platform media player and streaming server
 
       # Audio
       spotify # Music streaming

@@ -18,6 +18,10 @@ in
     environment.systemPackages = with pkgs; [
       prismlauncher # Minecraft launcher
       mangohud # Vulkan and OpenGL overlay for monitoring FPS, temperatures, CPU/GPU load and more
+
+      gpu-screen-recorder
+      gpu-screen-recorder-gtk
+
     ];
 
     programs = {
@@ -31,6 +35,7 @@ in
         capSysNice = true;
       };
       gamemode.enable = true;
+      gpu-screen-recorder.enable = true;
     };
   };
 }
