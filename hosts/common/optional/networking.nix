@@ -21,7 +21,7 @@ in
 
   config = mkIf cfg.enable {
 
-    # Enable Networking and configure
+    # Enable Networkmanager
     networking.networkmanager.enable = true;
     # Enable and configure my own DNSCrypt Module
     dnscrypt-module = {
