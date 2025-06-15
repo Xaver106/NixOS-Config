@@ -22,6 +22,15 @@ in
       filezilla # FTP/SFTP client
       localsend # Local network file sharing (AirDrop alternative)
       nextcloud-client # Nextcloud sync client
+      rymdport # Easy encrypted file, folder, and text sharing between devices
+      warp # Fast and secure file transfer
     ];
+
+    programs = {
+      localsend = {
+        enable = true;
+        openFirewall = true;
+      };
+    };
   };
 }
