@@ -19,5 +19,10 @@ in
       rpi-imager # Raspberry Pi imaging tool
       ventoy-full # Multiboot USB creator
     ];
+
+    # Seems safe so far. Build process uses official binarys from upstream projects.
+    nixpkgs.config.permittedInsecurePackages = [
+      "ventoy-1.1.05"
+    ];
   };
 }
