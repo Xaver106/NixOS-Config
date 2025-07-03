@@ -44,7 +44,8 @@ in
       ocrmypdf # Adds an OCR text layer to scanned PDF files, allowing them to be searched
       tesseract # OCR engine
 
-      # Markdown Editor
+      # Note Taking
+      kdePackages.klevernotes # A note-taking and management application using markdown
       typora
     ];
   };

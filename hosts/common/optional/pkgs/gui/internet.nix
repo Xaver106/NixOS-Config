@@ -24,6 +24,9 @@ in
       nextcloud-client # Nextcloud sync client
       rymdport # Easy encrypted file, folder, and text sharing between devices
       warp # Fast and secure file transfer
+
+      # Remote Desktop
+      rustdesk # Virtual / remote desktop infrastructure for everyone! Open source TeamViewer / Citrix alternative
     ];
 
     programs = {
