@@ -29,6 +29,8 @@ in
       inkscape # Vector graphics editor
       gimp # Image editor
       qimgv # Image viewer
+      switcheroo # App for converting images between different formats
+      converseen # Batch image converter and resizer
     ];
   };
 }

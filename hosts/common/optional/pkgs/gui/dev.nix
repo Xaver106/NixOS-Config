@@ -28,6 +28,9 @@ in
 
       # SQLite Browser
       sqlitebrowser
+
+      # Toolboxes
+      devtoolbox # Development tools at your fingertips
     ];
   };
 }
