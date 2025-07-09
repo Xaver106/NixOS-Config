@@ -19,6 +19,8 @@ in
       # Video
       mpv # Modern media player
       vlc # Cross-platform media player and streaming server
+      handbrake # Tool for converting video files and ripping DVDs
+      mkvtoolnix # Cross-platform tools for Matroska
 
       # Audio
       spotify # Music streaming
