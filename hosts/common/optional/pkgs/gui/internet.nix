@@ -26,7 +26,7 @@ in
       warp # Fast and secure file transfer
 
       # Remote Desktop
-      rustdesk # Virtual / remote desktop infrastructure for everyone! Open source TeamViewer / Citrix alternative
+      rustdesk-flutter # Virtual / remote desktop infrastructure for everyone! Open source TeamViewer / Citrix alternative
     ];
 
     programs = {
