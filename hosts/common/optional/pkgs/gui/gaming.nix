@@ -17,7 +17,9 @@ in
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       prismlauncher # Minecraft launcher
+
       mangohud # Vulkan and OpenGL overlay for monitoring FPS, temperatures, CPU/GPU load and more
+      protonplus # Simple Wine and Proton-based compatibility tools manager
 
       gpu-screen-recorder
       gpu-screen-recorder-gtk
@@ -28,7 +30,9 @@ in
       steam = {
         enable = true;
         gamescopeSession.enable = true;
+        protontricks.enable = true;
         remotePlay.openFirewall = true;
+        localNetworkGameTransfers.openFirewall = true;
       };
       gamescope = {
         enable = true;
