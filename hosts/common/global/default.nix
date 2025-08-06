@@ -23,6 +23,9 @@
     outputs.overlays.stable-packages
   ];
 
+  # Enable firmware updates
+  services.fwupd.enable = true;
+
   catppuccin.tty.enable = true;
 
   users.defaultUserShell = pkgs.fish; # Set default shell to fish

@@ -16,6 +16,7 @@
     inputs.nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
     ./hardware-configuration.nix
     ./nvidia.nix
+    ./secure-boot.nix
   ];
 
   networking.hostName = "Xavers-nixDesktop";

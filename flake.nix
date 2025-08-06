@@ -19,6 +19,12 @@
     # optional, not necessary for the module
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.2";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+
     # Catppuccin
     catppuccin.url = "github:catppuccin/nix";
 
