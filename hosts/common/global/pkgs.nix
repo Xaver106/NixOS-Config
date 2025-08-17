@@ -49,8 +49,8 @@
     # File System
     fdupes # Find duplicate files
     ntfs3g # NTFS support
-    exfat # EXFAT Support
     exfatprogs
+    lvm2
 
     # Network Tools
     wget # File download
