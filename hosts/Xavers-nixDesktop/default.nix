@@ -22,11 +22,17 @@
   networking.hostName = "Xavers-nixDesktop";
   setup.workstationDefaults = true;
 
-  boot.initrd.systemd.enable = true;
-
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    initrd.systemd.enable = true;
+    loader = {
+      systemd-boot = {
+        enable = true; # NOTE: Overidden by secure-boot.nix (Kept as backup) 
+        edk2-uefi-shell.enable = true;
+      };
+      efi.canTouchEfiVariables = true;
+    };
+  };
 
   time.hardwareClockInLocalTime = true; # Fix windows showing wrong time
 
