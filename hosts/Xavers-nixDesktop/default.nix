@@ -34,8 +34,6 @@
     };
   };
 
-  time.hardwareClockInLocalTime = true; # Fix windows showing wrong time
-
   programs.streamcontroller.enable = true;
 
 }
