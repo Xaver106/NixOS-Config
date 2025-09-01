@@ -29,6 +29,17 @@ in
       rustdesk-flutter # Virtual / remote desktop infrastructure for everyone! Open source TeamViewer / Citrix alternative
     ];
 
+    networking.networkmanager.plugins = with pkgs; [
+      networkmanager-fortisslvpn
+      networkmanager-iodine
+      networkmanager-l2tp
+      networkmanager-openconnect
+      networkmanager-openvpn
+      networkmanager-sstp
+      networkmanager-strongswan
+      networkmanager-vpnc
+    ];
+
     programs = {
       localsend = {
         enable = true;
