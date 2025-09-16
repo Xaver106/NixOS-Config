@@ -26,6 +26,12 @@ in
 
     ];
 
+    # XBOX Controller support
+    hardware.xone.enable = true;
+    hardware.firmware = with pkgs; [
+      xow_dongle-firmware
+    ];
+
     programs = {
       steam = {
         enable = true;
