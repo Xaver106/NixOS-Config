@@ -21,6 +21,17 @@
   nixpkgs.overlays = [
     outputs.overlays.master-packages
     outputs.overlays.stable-packages
+
+    # Temporary fix for yubioath
+    # NOTE: https://github.com/NixOS/nixpkgs/issues/442315
+    (final: prev: {
+      yubikey-manager = prev.callPackage (prev.fetchFromGitHub {
+        owner = "NixOS";
+        repo = "nixpkgs";
+        rev = "3a75333d2d9e9114e0d8223f8bcd9d3b32c6401f";
+        sha256 = "sha256-yMemrU/4KAWH4ggoZMVIlgRbP4bCgeMHnCt4uZYYtsY=";
+      } + "/pkgs/by-name/yu/yubikey-manager/package.nix") {};
+    })
   ];
 
   # Enable firmware updates
