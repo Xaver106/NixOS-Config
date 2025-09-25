@@ -16,7 +16,13 @@ in
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      prismlauncher # Minecraft launcher
+      (prismlauncher.override {
+        # Change Java runtimes available to Prism Launcher
+        jdks = with pkgs; [
+          temurin-jre-bin
+          temurin-jre-bin-17
+        ];
+      })
 
       mangohud # Vulkan and OpenGL overlay for monitoring FPS, temperatures, CPU/GPU load and more
       protonplus # Simple Wine and Proton-based compatibility tools manager
